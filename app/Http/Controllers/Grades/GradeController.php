@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Grades;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGrades;
-use App\Models\Classroom;
 use App\Models\Grade;
 use CodeZero\UniqueTranslation\UniqueTranslationRule;
+use Illuminate\Http\Request;
+
 
 class GradeController extends Controller
 {
@@ -18,8 +19,8 @@ class GradeController extends Controller
      */
     public function index()
     {
-        $grades = Grade::all();
-        return view('pages.grades.grades', compact('grades'));
+        $Grades = Grade::all();
+        return view('pages.grades.grades', compact('Grades'));
     }
 
     /**
@@ -40,8 +41,12 @@ class GradeController extends Controller
     public function store(StoreGrades $request)
     {
 
-        $validated = $request->validated();
-
+        /*
+                //كود فالديشن التحقق
+                if (Grade::where('Name->ar', $request->Name)->orwhere('Name->en', $request->Name_en)->exists()) {
+                    return redirect()->back()->withErrors(trans('grades_trans.exists'));
+                }
+        */
         try {
             $validated = $request->validated();
             $Grade = new Grade();
@@ -91,9 +96,22 @@ class GradeController extends Controller
      * @param int $id
      * @return Response
      */
-    public function update($id)
+    public function update(StoreGrades $request)
     {
+        try {
 
+            $validated = $request->validated();
+            $Grades = Grade::findOrFail($request->id);
+            $Grades->update([
+                $Grades->Name = ['ar' => $request->Name, 'en' => $request->Name_en],
+                $Grades->Notes = $request->Notes,
+            ]);
+            toastr()->success(trans('messages.Update'));
+            return redirect()->route('Grades.index');
+        } catch
+        (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -102,9 +120,11 @@ class GradeController extends Controller
      * @param int $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-
+        $Grades = Grade::findOrFail($request->id)->delete();
+        toastr()->success(trans('messages.Delete'));
+        return redirect()->route('Grades.index');
     }
 
 }

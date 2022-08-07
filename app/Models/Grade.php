@@ -11,6 +11,8 @@ class Grade extends Model
 
     public $translatable = ['Name'];// خاص بادخال البيانات بترجمه
     protected $table = 'Grades';
+    protected $fillable = ['Name', 'Notes'];
     public $timestamps = true;
+
 
 }

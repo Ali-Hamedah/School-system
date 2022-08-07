@@ -22,7 +22,7 @@
                     </li>
                     <!-- menu title -->
                     <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Components</li>
-                    <!-- menu item Elements-->
+                    <!-- menu item Grades-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
                             <div class="pull-left"><i class="ti-palette"></i><span
@@ -35,11 +35,137 @@
 
                         </ul>
                     </li>
-                    <!-- menu item calendar-->
+                    <!-- menu item classes-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="fa fa-building"></i><span
+                                    class="right-nav-text">{{__('main_trans.classes')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('Classrooms.index')}}">{{__('main_trans.List_classes')}} </a></li>
+
+                        </ul>
+                    </li>
+                    <!-- End menu item -->
+                    <!-- menu item sections-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="fas fa-chalkboard"></i><span
+                                    class="right-nav-text">{{__('main_trans.sections')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="calendar.html">Events Calendar </a></li>
+                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        </ul>
+                    </li>
+                    <!-- menu item todo-->
+                    <!-- menu item students-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="fas fa-user-graduate"></i><span
+                                    class="right-nav-text">{{__('main_trans.students')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="calendar.html">Events Calendar </a></li>
+                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        </ul>
+                    </li>
+                    <!-- menu item todo-->
+                    <!-- menu item Teachers-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
                             <div class="pull-left"><i class="ti-calendar"></i><span
-                                    class="right-nav-text">calendar</span></div>
+                                    class="right-nav-text">{{__('main_trans.Teachers')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="calendar.html">Events Calendar </a></li>
+                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        </ul>
+                    </li>
+                    <!-- menu item todo-->
+                    <!-- menu item Parents-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="ti-calendar"></i><span
+                                    class="right-nav-text">{{__('main_trans.Parents')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="calendar.html">Events Calendar </a></li>
+                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        </ul>
+                    </li>
+                    <!-- menu item todo-->
+                    <!-- menu item Accounts-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="ti-calendar"></i><span
+                                    class="right-nav-text">{{__('main_trans.Accounts')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="calendar.html">Events Calendar </a></li>
+                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        </ul>
+                    </li>
+                    <!-- menu item todo-->
+                    <!-- menu item Attendance-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="ti-calendar"></i><span
+                                    class="right-nav-text">{{__('main_trans.Attendance')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="calendar.html">Events Calendar </a></li>
+                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        </ul>
+                    </li>
+                    <!-- menu item todo-->
+                    <!-- menu item Exams-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="ti-calendar"></i><span
+                                    class="right-nav-text">{{__('main_trans.Exams')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="calendar.html">Events Calendar </a></li>
+                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        </ul>
+                    </li>
+                    <!-- menu item todo-->
+                    <!-- menu item library-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="ti-calendar"></i><span
+                                    class="right-nav-text">{{__('main_trans.library')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="calendar.html">Events Calendar </a></li>
+                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        </ul>
+                    </li>
+                    <!-- menu item todo-->
+                    <!-- menu item Onlineclasses-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                            <div class="pull-left"><i class="ti-calendar"></i><span
+                                    class="right-nav-text">{{__('main_trans.Onlineclasses')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
