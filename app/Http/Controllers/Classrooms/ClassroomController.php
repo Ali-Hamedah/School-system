@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreClassroom;
 use App\Models\Classroom;
 use App\Models\Grade;
+use Illuminate\Http\Request;
 
 class ClassroomController extends Controller
 {
@@ -93,9 +94,22 @@ class ClassroomController extends Controller
      * @param int $id
      * @return Response
      */
-    public function update($id)
+    public function update(StoreClassroom $request)
     {
+        try {
 
+            $validated = $request->validated();
+            $Classrooms = Classroom::findOrFail($request->id);
+            $Classrooms->update([
+                $Classrooms->Name_Class = ['ar' => $request->Name, 'en' => $request->Name_en],
+                $Classrooms->Grade_id = $request->Grade_id,
+            ]);
+            toastr()->success(trans('messages.Update'));
+            return redirect()->route('Classrooms.index');
+        } catch
+        (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -104,8 +118,27 @@ class ClassroomController extends Controller
      * @param int $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
+        $Classrooms = Classroom::findOrFail($request->id)->delete();
+        toastr()->success(trans('messages.Delete'));
+        return redirect()->route('Classrooms.index');
+    }
+
+    public function delete_all(Request $request)
+    {
+        $delete_all_id = explode(",", $request->delete_all_id);
+
+        Classroom::whereIn('id', $delete_all_id)->Delete();
+        toastr()->success(trans('messages.Delete'));
+        return redirect()->route('Classrooms.index');
+    }
+
+    public function Filter_Classes(Request $request)
+    {
+        $Grades = Grade::all();
+        $Search = Classroom::select('*')->where('Grade_id', '=', $request->Grade_id)->get();
+        return view('pages.My_Classes.My_Classes', compact('Grades'))->withDetails($Search);
 
     }
 
