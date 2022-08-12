@@ -16,6 +16,7 @@ class Classroom extends Model
     protected $fillable = ['Name_Class', 'Grade_id'];
     public $timestamps = true;
 
+    // علاقة بين الصفوف المراحل الدراسية لجلب اسم المرحلة في جدول الصفوف
     public function Grades()
     {
         return $this->belongsTo('App\Models\Grade', 'Grade_id');

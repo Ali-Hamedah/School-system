@@ -51,27 +51,26 @@
                     <!-- End menu item -->
                     <!-- menu item sections-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#sections-menu">
                             <div class="pull-left"><i class="fas fa-chalkboard"></i><span
                                     class="right-nav-text">{{__('main_trans.sections')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="calendar.html">Events Calendar </a></li>
-                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        <ul id="sections-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('Sections.index')}}">{{__('Sections_trans.title_page')}} </a></li>
                         </ul>
                     </li>
                     <!-- menu item todo-->
                     <!-- menu item students-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
-                            <div class="pull-left"><i class="fas fa-user-graduate"></i><span
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#students-menu">
+                            <div class="pull-left"><i class="bi lobilist-item-placeholder"></i><span
                                     class="right-nav-text">{{__('main_trans.students')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                        <ul id="students-menu" class="collapse" data-parent="#sidebarnav">
                             <li><a href="calendar.html">Events Calendar </a></li>
                             <li><a href="calendar-list.html">List Calendar</a></li>
                         </ul>
