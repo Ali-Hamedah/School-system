@@ -1,4 +1,3 @@
-// config/toastr.php
 <?php
 
 return [
