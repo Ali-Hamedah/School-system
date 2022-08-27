@@ -222,14 +222,16 @@ class AddParent extends Component
                 'National_ID_Father' => $this->National_ID_Father,
             ]);
 
-        }
 
+        }
+        toastr()->success(trans('messages.Update'));
         return redirect()->to('/add_parent');
     }
 
     public function delete($id)
     {
         My_Parent::findOrFail($id)->delete();
+        toastr()->success(trans('messages.Delete'));
         return redirect()->to('/add_parent');
     }
 

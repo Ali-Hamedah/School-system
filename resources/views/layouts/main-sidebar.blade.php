@@ -78,15 +78,15 @@
                     <!-- menu item todo-->
                     <!-- menu item Teachers-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Teachers-menu">
                             <div class="pull-left"><i class="ti-calendar"></i><span
                                     class="right-nav-text">{{__('main_trans.Teachers')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="calendar.html">Events Calendar </a></li>
-                            <li><a href="calendar-list.html">List Calendar</a></li>
+                        <ul id="Teachers-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('Teachers.index')}}">{{__('main_trans.List_Teachers')}} </a></li>
+                            <li><a href="calendar-list.html">{{__('main_trans.List_Teachers')}}</a></li>
                         </ul>
                     </li>
                     <!-- menu item todo-->
@@ -99,8 +99,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Parents-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="calendar.html">{{__('main_trans.List_Parents')}} </a></li>
-                            <li><a href="{{url('add_parent')}}">{{__('main_trans.Add_Parent')}}</a></li>
+                            <li><a href="{{url('add_parent')}}">{{__('main_trans.List_Parents')}} </a></li>
+
                         </ul>
                     </li>
                     <!-- menu item todo-->
