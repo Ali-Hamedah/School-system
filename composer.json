@@ -18,7 +18,7 @@
         "livewire/livewire": "^2.10",
         "mcamara/laravel-localization": "^1.7",
         "spatie/laravel-translatable": "^4.6",
-        "yoeunes/toastr": "^2.0"
+        "yoeunes/toastr": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

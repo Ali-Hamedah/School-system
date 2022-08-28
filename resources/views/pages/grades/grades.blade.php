@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('css')
-
+    @toastr_css
     @section('title')
-        {{__('main_trans.Grades')}}
+        {{ trans('Grades_trans.title_page') }}
     @stop
 @endsection
 @section('page-header')
