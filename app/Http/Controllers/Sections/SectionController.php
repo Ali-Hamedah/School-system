@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Sections;
 
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSections;
 use App\Models\Classroom;
 use App\Models\Grade;
 use App\Models\Section;
 use App\Models\Teacher;
+use Illuminate\Http\Request;
 
 class SectionController extends Controller
 {
@@ -107,6 +109,14 @@ class SectionController extends Controller
             } else {
                 $Sections->Status = 2;
             }
+
+            // update pivot tABLE
+            if (isset($request->teacher_id)) {
+                $Sections->teachers()->sync($request->teacher_id);
+            } else {
+                $Sections->teachers()->sync(array());
+            }
+
             $Sections->save();
             toastr()->success(trans('messages.Update'));
 
@@ -123,9 +133,11 @@ class SectionController extends Controller
      * @param \App\Section $section
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Section $section)
+    public function destroy(request $request)
     {
-        //
+        Section::findOrFail($request->id)->delete();
+        toastr()->error(trans('messages.Delete'));
+        return redirect()->route('Sections.index');
     }
 
     public function getclasses($id)
