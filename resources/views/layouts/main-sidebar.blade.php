@@ -71,8 +71,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="students-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="calendar.html">Events Calendar </a></li>
-                            <li><a href="calendar-list.html">List Calendar</a></li>
+                            <li><a href="{{route('Students.create')}}">{{__('main_trans.add_student')}} </a></li>
+
                         </ul>
                     </li>
                     <!-- menu item todo-->
@@ -86,7 +86,7 @@
                         </a>
                         <ul id="Teachers-menu" class="collapse" data-parent="#sidebarnav">
                             <li><a href="{{route('Teachers.index')}}">{{__('main_trans.List_Teachers')}} </a></li>
-                            <li><a href="calendar-list.html">{{__('main_trans.List_Teachers')}}</a></li>
+
                         </ul>
                     </li>
                     <!-- menu item todo-->
