@@ -186,4 +186,10 @@ class StudentRepository implements StudentRepositoryInterface
         return redirect()->route('Students.show', $request->student_id);
     }
 
+    public function open_file($studentsname, $filename)
+    {
+        //$files = Storage::disk('upload_attachments')->getDriver()->getAdapter()->applyPathPrefix($studentsname . '/' . $filename);
+        return response()->file(public_path('attachments/students/' . $studentsname . '/' . $filename));
+    }
+
 }

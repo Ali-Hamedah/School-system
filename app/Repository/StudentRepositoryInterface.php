@@ -41,5 +41,7 @@ interface StudentRepositoryInterface
     //Delete_attachment
     public function Delete_attachment($request);
 
+    public function open_file($studentsname, $filename);
+
 }
 

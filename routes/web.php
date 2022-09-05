@@ -77,7 +77,10 @@ Route::group(
         Route::get('/Get_Sections/{id}', 'StudentController@Get_Sections');
         Route::post('Upload_attachment', 'StudentController@Upload_attachment')->name('Upload_attachment');
         Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
+        Route::get('View_file/{studentsname}/{filename}', 'StudentController@open_file');
         Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
+
+
     });
 
 

@@ -83,4 +83,10 @@ class StudentController extends Controller
 
     }
 
+    public function open_file($studentsname, $filename)
+    {
+
+        return $this->Student->open_file($studentsname, $filename);
+    }
+
 }

@@ -122,6 +122,11 @@
                                                                 class="fas fa-download"></i>&nbsp; {{trans('Students_trans.Download')}}
                                                         </a>
 
+                                                        <a class="btn btn-outline-success btn-sm"
+                                                           href="{{ url('View_file') }}/{{ $attachment->imageable->name  }}/{{ $attachment->filename }}"
+                                                           role="button"><i class="fas fa-eye"></i>&nbsp;
+                                                            عرض</a>
+
                                                         <button type="button" class="btn btn-outline-danger btn-sm"
                                                                 data-toggle="modal"
                                                                 data-target="#Delete_img{{ $attachment->id }}"
@@ -130,7 +135,7 @@
 
                                                     </td>
                                                 </tr>
-
+                                                @include('pages.Students.Delete_img')
                                             @endforeach
                                             </tbody>
                                         </table>
