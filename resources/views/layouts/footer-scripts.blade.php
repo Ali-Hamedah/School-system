@@ -38,8 +38,8 @@
                     dataType: "json",
                     success: function (data) {
                         $('select[name="Classroom_id"]').empty();
+                        $('select[name="Classroom_id"]').append('<option selected disabled >{{trans('Parent_trans.Choose')}}...</option>');
                         $.each(data, function (key, value) {
-                            $('select[name="Classroom_id"]').append('<option selected disabled >{{trans('Parent_trans.Choose')}}...</option>');
                             $('select[name="Classroom_id"]').append('<option value="' + key + '">' + value + '</option>');
                         });
 
@@ -51,7 +51,6 @@
         });
     });
 </script>
-
 
 <script>
     $(document).ready(function () {
@@ -77,6 +76,7 @@
     });
 </script>
 
+//المرحلة الدراسية الجديدة
 <script>
     $(document).ready(function () {
         $('select[name="Grade_id_new"]').on('change', function () {
@@ -88,11 +88,10 @@
                     dataType: "json",
                     success: function (data) {
                         $('select[name="Classroom_id_new"]').empty();
+                        $('select[name="Classroom_id_new"]').append('<option selected disabled >{{trans('Parent_trans.Choose')}}...</option>');
                         $.each(data, function (key, value) {
-                            $('select[name="Classroom_id_new"]').append('<option selected disabled >{{trans('Parent_trans.Choose')}}...</option>');
                             $('select[name="Classroom_id_new"]').append('<option value="' + key + '">' + value + '</option>');
                         });
-
                     },
                 });
             } else {
@@ -101,7 +100,6 @@
         });
     });
 </script>
-
 
 <script>
     $(document).ready(function () {
@@ -117,7 +115,6 @@
                         $.each(data, function (key, value) {
                             $('select[name="section_id_new"]').append('<option value="' + key + '">' + value + '</option>');
                         });
-
                     },
                 });
             } else {
