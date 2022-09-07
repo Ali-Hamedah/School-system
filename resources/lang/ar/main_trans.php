@@ -17,6 +17,7 @@ return [
     'students' => 'الطلاب',
     'add_student' => 'اضافة طالب جديد',
     'list_student' => 'قائمة الطلاب',
+    'Students_Promotions' => 'ترقية الطلاب',
     'Teachers' => 'المعلمين',
     'List_Teachers' => 'قائمة المعلمين',
     'Parents' => 'اولياء الامور',

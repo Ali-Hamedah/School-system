@@ -79,8 +79,11 @@ Route::group(
         Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
         Route::get('View_file/{studentsname}/{filename}', 'StudentController@open_file');
         Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
+    });
 
-
+    //==============================Promotion Students ============================
+    Route::group(['namespace' => 'Students'], function () {
+        Route::resource('Promotion', 'PromotionController');
     });
 
 

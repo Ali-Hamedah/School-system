@@ -15,6 +15,9 @@ class AddParent extends Component
 {
     use WithFileUploads;
 
+    public $selectedItem;
+    public $action;
+
     public $successMessage = '';
 
     public $catchError, $updateMode = false, $photos, $show_table = true, $Parent_id;
@@ -273,5 +276,6 @@ class AddParent extends Component
     {
         $this->currentStep = $step;
     }
+
 
 }
