@@ -2,10 +2,11 @@
 
 return [
 
+
     'Dashboard' => 'Dashboard',
     'Dashboard_page' => 'Dashboard',
-    'Main_title' => 'AliSoft School Management Program',
-    'Programname' => 'AliSoft School Management Program',
+    'Main_title' => 'MoraSoft School Management Program',
+    'Programname' => 'MoraSoft School Management Program',
     'change_language' => 'language',
     'Grades' => 'Grades',
     'Grades_list' => 'Grades List',
@@ -15,7 +16,7 @@ return [
     'List_sections' => 'List Sections',
     'students' => 'Students',
     'add_student' => 'Add student',
-    'list_student' => ' list student',
+    'list_students' => 'list Students',
     'Students_Promotions' => 'Students Promotions',
     'information_student' => 'Information Students',
     'Students_upgrade' => 'Students Upgrade',

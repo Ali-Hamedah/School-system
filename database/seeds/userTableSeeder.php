@@ -1,8 +1,8 @@
 <?php
 
-use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class userTableSeeder extends Seeder
 {
@@ -13,14 +13,12 @@ class userTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->delete();
 
-        $users = User::create([
+
+        DB::table('users')->insert([
             'name' => 'Ali Hamedah',
-            'email' => 'admin44@gmail.com',
-            'email_verified_at' => null,
-            'password' => bcrypt('123456'),
-
+            'email' => 'ali.hamedah77@yahoo.com',
+            'password' => Hash::make('123456'),
         ]);
 
     }

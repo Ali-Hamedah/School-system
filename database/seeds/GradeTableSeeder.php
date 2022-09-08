@@ -15,14 +15,13 @@ class GradeTableSeeder extends Seeder
     {
         DB::table('grades')->delete();
         $grades = [
-            ['en' => 'Primary stage', 'ar' => 'المرحلة الابتدائية', 'Notes' => 'alikjkjkj'],
+            ['en' => 'Primary stage', 'ar' => 'المرحلة الابتدائية'],
             ['en' => 'middle School', 'ar' => 'المرحلة الاعدادية'],
             ['en' => 'High school', 'ar' => 'المرحلة الثانوية'],
         ];
 
-
         foreach ($grades as $grade) {
-            Grade::create(['Name' => $grade]);
+            Grade::create(['Name' => $grade, 'Notes' => 'devwlt']);
         }
 
     }
