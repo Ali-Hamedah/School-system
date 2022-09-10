@@ -146,14 +146,14 @@
                     <!-- menu item todo-->
                     <!-- menu item Accounts-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu">
                             <div class="pull-left"><i class="ti-calendar"></i><span
                                     class="right-nav-text">{{__('main_trans.Accounts')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="calendar.html">Events Calendar </a></li>
+                        <ul id="Accounts-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('Fees.index')}}">{{__('main_trans.Tuition_fees')}}</a></li>
                             <li><a href="calendar-list.html">List Calendar</a></li>
                         </ul>
                     </li>
