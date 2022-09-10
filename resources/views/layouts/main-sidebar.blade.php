@@ -107,9 +107,9 @@
                                     <div class="clearfix"></div>
                                 </a>
                                 <ul id="Graduate students" class="collapse">
-                                    <li><a href="">{{trans('main_trans.add_Graduate')}}</a>
+                                    <li><a href="{{route('Graduated.create')}}">{{trans('main_trans.add_Graduate')}}</a>
                                     </li>
-                                    <li><a href="">{{trans('main_trans.list_Graduate')}}</a>
+                                    <li><a href="{{route('Graduated.index')}}">{{trans('main_trans.list_Graduate')}}</a>
                                     </li>
                                 </ul>
                             </li>

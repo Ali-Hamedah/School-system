@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
-use App\Repository\StudentPromotionRepositoryInterface;
+use App\Repository\StudentGraduatedRepositoryInterface;
 use Illuminate\Http\Request;
 
-class PromotionController extends Controller
+class GraduatedController extends Controller
 {
-    protected $Promotion;
+    protected $Graduated;
 
-    public function __construct(StudentPromotionRepositoryInterface $Promotion)
+    public function __construct(StudentGraduatedRepositoryInterface $Graduated)
     {
-        $this->Promotion = $Promotion;
+        $this->Graduated = $Graduated;
     }
 
     public function index()
     {
-        return $this->Promotion->index();
+        return $this->Graduated->index();
     }
 
     /**
@@ -27,7 +27,7 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        return $this->Promotion->create();
+        return $this->Graduated->create();
     }
 
     /**
@@ -38,7 +38,7 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->Promotion->store($request);
+        return $this->Graduated->SoftDelete($request);
     }
 
     /**
@@ -47,9 +47,8 @@ class PromotionController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-
 
     }
 
@@ -73,7 +72,7 @@ class PromotionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $this->Graduated->ReturnData($request);
     }
 
     /**
@@ -84,6 +83,6 @@ class PromotionController extends Controller
      */
     public function destroy(Request $request)
     {
-        return $this->Promotion->destroy($request);
+        return $this->Graduated->destroy($request);
     }
 }
