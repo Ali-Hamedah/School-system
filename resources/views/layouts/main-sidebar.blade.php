@@ -154,7 +154,7 @@
                         </a>
                         <ul id="Accounts-menu" class="collapse" data-parent="#sidebarnav">
                             <li><a href="{{route('Fees.index')}}">{{__('main_trans.Tuition_fees')}}</a></li>
-                            <li><a href="calendar-list.html">List Calendar</a></li>
+                            <li><a href="{{route('Fees_Invoices.index')}}">{{__('main_trans.levies')}}</a></li>
                         </ul>
                     </li>
                     <!-- menu item todo-->

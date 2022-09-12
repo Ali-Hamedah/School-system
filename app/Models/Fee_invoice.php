@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fee_invoice extends Model
 {
+
+    protected $guarded = [];
+
     public function grade()
     {
         return $this->belongsTo('App\Models\Grade', 'Grade_id');

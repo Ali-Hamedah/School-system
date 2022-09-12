@@ -31,6 +31,7 @@ return [
     'Add_Parent' => 'اضافة ولي امر',
     'Accounts' => 'الحسابات',
     'Tuition_fees' => 'الرسوم الدراسية',
+    'levies' => 'الرسوم ',
     'Attendance' => 'الحضور والغياب',
     'Exams' => 'الامتحانات',
     'library' => 'المكتبة',

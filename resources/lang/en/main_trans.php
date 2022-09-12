@@ -28,6 +28,7 @@ return [
     'List_Parents' => 'List Parents',
     'Accounts' => 'Accounts',
     'Tuition_fees' => 'Tuition fees',
+    'levies' => 'levies ',
     'Attendance' => 'Attendance',
     'Exams' => 'Exams',
     'library' => 'Library',
