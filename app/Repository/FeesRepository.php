@@ -36,9 +36,10 @@ class FeesRepository implements FeesRepositoryInterface
             $fees->Classroom_id = $request->Classroom_id;
             $fees->description = $request->description;
             $fees->year = $request->year;
+            $fees->Fee_type = $request->Fee_type;
             $fees->save();
             toastr()->success(trans('messages.success'));
-            return redirect()->route('Teachers.create');
+            return redirect()->route('Fees.index');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
@@ -55,6 +56,7 @@ class FeesRepository implements FeesRepositoryInterface
             $fees->Classroom_id = $request->Classroom_id;
             $fees->description = $request->description;
             $fees->year = $request->year;
+            $fees->Fee_type = $request->Fee_type;
             $fees->save();
             toastr()->success(trans('messages.Update'));
             return redirect()->route('Fees.index');
