@@ -33,7 +33,7 @@ class StudentsTableSeeder extends Seeder
         $students->Classroom_id = Classroom::all()->unique()->random()->id;
         $students->section_id = Section::all()->unique()->random()->id;
         $students->parent_id = My_Parent::all()->unique()->random()->id;
-        $students->academic_year = '2021';
+        $students->academic_year = '2022';
         $students->save();
     }
 }
