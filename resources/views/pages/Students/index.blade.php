@@ -77,6 +77,11 @@
                                                                     class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;سند
                                                                 قبض</a>
                                                             <a class="dropdown-item"
+                                                               href="{{route('ProcessingFee.show',$student->id)}}"><i
+                                                                    style="color: #9dc8e2"
+                                                                    class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;
+                                                                استبعاد رسوم</a>
+                                                            <a class="dropdown-item"
                                                                data-target="#Delete_Student{{ $student->id }}"
                                                                data-toggle="modal"
                                                                href="##Delete_Student{{ $student->id }}"><i
