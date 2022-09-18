@@ -79,8 +79,12 @@
                                                             <a class="dropdown-item"
                                                                href="{{route('ProcessingFee.show',$student->id)}}"><i
                                                                     style="color: #9dc8e2"
-                                                                    class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;
+                                                                    class="fas fa-money"></i>&nbsp; &nbsp;
                                                                 استبعاد رسوم</a>
+                                                            <a class="dropdown-item"
+                                                               href="{{route('Payment_students.show',$student->id)}}"><i
+                                                                    style="color:goldenrod" class="fas fa-donate"></i>&nbsp;
+                                                                &nbsp;سند صرف</a>
                                                             <a class="dropdown-item"
                                                                data-target="#Delete_Student{{ $student->id }}"
                                                                data-toggle="modal"
