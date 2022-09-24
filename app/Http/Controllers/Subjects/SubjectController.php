@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class SubjectController extends Controller
 {
+
     protected $Subject;
 
     public function __construct(SubjectRepositoryInterface $Subject)
@@ -30,32 +31,27 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
         return $this->Subject->store($request);
-
     }
 
 
     public function show($id)
     {
-
+        //
     }
 
 
     public function edit($id)
     {
         return $this->Subject->edit($id);
-
     }
 
     public function update(Request $request)
     {
         return $this->Subject->update($request);
-
     }
-
 
     public function destroy(Request $request)
     {
         return $this->Subject->destroy($request);
-
     }
 }
