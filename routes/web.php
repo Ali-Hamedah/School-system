@@ -94,8 +94,8 @@ Route::group(
         Route::resource('subjects', 'SubjectController');
     });
 
-    Route::group(['namespace' => 'Exams'], function () {
-        Route::resource('Exams', 'ExamController');
+    Route::group(['namespace' => 'Quizzes'], function () {
+        Route::resource('Quizzes', 'QuizzeController');
     });
 
 });

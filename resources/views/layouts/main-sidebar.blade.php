@@ -197,7 +197,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Exams-menu" class="collapse" data-parent="#Exams">
-                            <li><a href="{{route('Exams.index')}}">قائمة الامتحانات</a></li>
+                            <li><a href="{{route('Quizzes.index')}}">قائمة الاختبارات</a></li>
                         </ul>
                     </li>
                     <!-- menu item todo-->

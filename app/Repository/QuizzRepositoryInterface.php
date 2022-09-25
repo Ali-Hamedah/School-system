@@ -2,8 +2,9 @@
 
 namespace App\Repository;
 
-interface ExamRepositoryInterface
+interface QuizzRepositoryInterface
 {
+
     public function index();
 
     public function create();
