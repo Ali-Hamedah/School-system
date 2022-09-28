@@ -198,6 +198,7 @@
                         </a>
                         <ul id="Exams-menu" class="collapse" data-parent="#Exams">
                             <li><a href="{{route('Quizzes.index')}}">قائمة الاختبارات</a></li>
+                            <li><a href="{{route('questions.index')}}">قائمة الاسئلة</a></li>
                         </ul>
                     </li>
                     <!-- menu item todo-->
@@ -215,16 +216,17 @@
                         </ul>
                     </li>
                     <!-- menu item todo-->
+
                     <!-- menu item Onlineclasses-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Onlineclasses-menu">
                             <div class="pull-left"><i class="ti-calendar"></i><span
                                     class="right-nav-text">{{__('main_trans.Onlineclasses')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="calendar.html">Events Calendar </a></li>
+                        <ul id="Onlineclasses-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('online_classes.index')}}">الاتصال مباشر مع زوم </a></li>
                             <li><a href="calendar-list.html">List Calendar</a></li>
                         </ul>
                     </li>

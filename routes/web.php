@@ -73,6 +73,7 @@ Route::group(
     //==============================Students============================
     Route::group(['namespace' => 'Students'], function () {
         Route::resource('Students', 'StudentController');
+        Route::resource('online_classes', 'OnlineClasseController');
         Route::resource('Promotion', 'PromotionController');
         Route::resource('Graduated', 'GraduatedController');
         Route::resource('Fees', 'FeesController');
@@ -94,8 +95,14 @@ Route::group(
         Route::resource('subjects', 'SubjectController');
     });
 
+    //==============================Quizzes============================
     Route::group(['namespace' => 'Quizzes'], function () {
         Route::resource('Quizzes', 'QuizzeController');
+    });
+
+    //==============================questions============================
+    Route::group(['namespace' => 'questions'], function () {
+        Route::resource('questions', 'QuestionController');
     });
 
 });

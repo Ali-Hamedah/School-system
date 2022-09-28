@@ -69,7 +69,7 @@ class QuizzRepository implements QuizzRepositoryInterface
 
 
             toastr()->success(trans('messages.Update'));
-            return redirect()->route('Quizzes.create');
+            return redirect()->route('Quizzes.index');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
