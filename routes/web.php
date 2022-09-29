@@ -74,6 +74,8 @@ Route::group(
     Route::group(['namespace' => 'Students'], function () {
         Route::resource('Students', 'StudentController');
         Route::resource('online_classes', 'OnlineClasseController');
+        Route::get('/indirect', 'OnlineClasseController@indirectCreate')->name('indirect.create');
+        Route::post('/indirect', 'OnlineClasseController@storeIndirect')->name('indirect.store');
         Route::resource('Promotion', 'PromotionController');
         Route::resource('Graduated', 'GraduatedController');
         Route::resource('Fees', 'FeesController');
