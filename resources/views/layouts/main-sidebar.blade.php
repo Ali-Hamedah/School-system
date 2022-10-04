@@ -229,6 +229,13 @@
                             <li><a href="calendar-list.html">List Calendar</a></li>
                         </ul>
                     </li>
+
+                    <!-- Settings-->
+                    <li>
+                        <a href="{{route('settings.index')}}"><i class="fas fa-cogs"></i><span
+                                class="right-nav-text">{{trans('main_trans.Settings')}} </span></a>
+                    </li>
+
                     <!-- menu item todo-->
                     <li>
                         <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">Todo
