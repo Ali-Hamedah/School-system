@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,23 @@ Route::group(
 
     //==============================dashboard============================
     Route::get('/teacher/dashboard', function () {
-        return view('pages.Teachers.dashboard.dashboard');
+        $ids = Teacher::findorFail(auth()->user()->id)->Sections()->pluck('section_id');
+        $data['count_sections'] = $ids->count();
+        $data['count_students'] = \App\Models\Student::whereIn('section_id', $ids)->count();
+
+//        $ids = DB::table('teacher_section')->where('teacher_id',auth()->user()->id)->pluck('section_id');
+//        $count_sections =  $ids->count();
+//        $count_students = DB::table('students')->whereIn('section_id',$ids)->count();
+        return view('pages.Teachers.dashboard.dashboard', $data);
+    });
+
+    Route::group(['namespace' => 'Teachers\dashboard'], function () {
+        //==============================students============================
+        Route::get('student', 'StudentController@index')->name('student.index');
+        Route::get('sections', 'StudentController@sections')->name('sections');
+        Route::post('attendance', 'StudentController@attendance')->name('attendance');
+        Route::post('edit_attendance', 'StudentController@editAttendance')->name('attendance.edit');
+
     });
 
 });
