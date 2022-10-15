@@ -102,7 +102,7 @@ Route::group(
 
     //==============================Quizzes============================
     Route::group(['namespace' => 'Quizzes'], function () {
-        Route::resource('Quizzes', 'QuizzController');
+        Route::resource('Quizzes', 'QuizzeController');
     });
 
     //==============================questions============================

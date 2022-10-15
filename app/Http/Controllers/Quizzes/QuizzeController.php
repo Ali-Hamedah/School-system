@@ -60,4 +60,5 @@ class QuizzeController extends Controller
         return $this->Quizz->destroy($request);
 
     }
+
 }
