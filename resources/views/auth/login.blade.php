@@ -55,6 +55,16 @@ login-->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 bg-white">
+
+                    @if (session()->has('Add'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>{{ session()->get('Add') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
                     <div class="login-fancy pb-40 clearfix">
                         @if($type == 'student')
                             <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول طالب</h3>
