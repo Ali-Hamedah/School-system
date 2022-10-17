@@ -41,7 +41,8 @@ class LoginController extends Controller
 
         if (Auth::guard($this->chekGuard($request))->attempt(['email' => $request->email, 'password' => $request->password])) {
             return $this->redirect($request);
-        } else {
+        }
+        else {
             return redirect()->back()->with(['Add' => 'يرجى التاكد من الايميل وكلمة السر']);
 
         }

@@ -30,4 +30,9 @@ class Quizze extends Model
     {
         return $this->belongsTo('App\Models\Section', 'section_id');
     }
+
+    public function subject()
+    {
+        return $this->belongsTo('App\Models\Subject', 'subject_id');
+    }
 }
