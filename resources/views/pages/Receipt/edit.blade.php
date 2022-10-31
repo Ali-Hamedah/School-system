@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        تعديل سند قبض
+        {{__('dashboard.Edit_receipt_deed')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        تعديل سند قبض : <label style="color: red">{{$receipt_student->student->name}}</label>
+        {{__('dashboard.Edit_receipt_deed')}} : <label style="color: red">{{$receipt_student->student->name}}</label>
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>المبلغ : <span class="text-danger">*</span></label>
+                                    <label> {{__('dashboard.Amount')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" name="Debit" value="{{$receipt_student->Debit}}"
                                            type="number">
                                     <input type="hidden" name="student_id" value="{{$receipt_student->student->id}}"
@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>البيان : <span class="text-danger">*</span></label>
+                                    <label> {{__('dashboard.Statement')}} : <span class="text-danger">*</span></label>
                                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1"
                                               rows="3">{{$receipt_student->description}}</textarea>
                                 </div>

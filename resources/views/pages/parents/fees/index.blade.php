@@ -28,12 +28,12 @@
                                         <thead>
                                         <tr class="alert-success">
                                             <th>#</th>
-                                            <th>{{__('dashboard.Name')}}</th>
-                                            <th>{{__('dashboard.Fee_Type')}}</th>
+                                            <th>{{__('dashboard.name')}}</th>
                                             <th>{{__('dashboard.Amount')}}</th>
                                             <th>{{__('Students_trans.Grade')}}</th>
                                             <th>{{__('Students_trans.classrooms')}}</th>
-                                            <th>{{__('dashboard.Statement')}}</th>
+                                            <th>{{__('Students_trans.academic_year')}}</th>
+                                            <th>{{__('grades_trans.Notes')}}</th>
                                             <th>{{__('Students_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
@@ -48,16 +48,12 @@
                                                 <td>{{$Fee_invoice->classroom->Name_Class}}</td>
                                                 <td>{{$Fee_invoice->description}}</td>
                                                 <td>
-                                                    <a href="{{route('Fees_Invoices.edit',$Fee_invoice->id)}}"
-                                                       class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
-                                                            class="fa fa-edit"></i></a>
-                                                    <button type="button" class="btn btn-danger btn-sm"
-                                                            data-toggle="modal"
-                                                            data-target="#Delete_Fee_invoice{{$Fee_invoice->id}}"><i
-                                                            class="fa fa-trash"></i></button>
+                                                    <a href="{{route('sons.receipt',$Fee_invoice->student_id)}}"
+                                                       title="{{__('dashboard.Payments')}}" class="btn btn-info btn-sm"
+                                                       role="button"
+                                                       aria-pressed="true"><i class="fa fa-edit"></i></a>
                                                 </td>
                                             </tr>
-                                        @include('pages.Fees_Invoices.Delete')
                                         @endforeach
                                     </table>
                                 </div>

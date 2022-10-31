@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        الرسوم الدراسية
+        {{__('main_trans.Tuition_fees')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        الرسوم الدراسية
+        {{__('main_trans.Tuition_fees')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -22,7 +22,7 @@
                         <div class="card card-statistics h-100">
                             <div class="card-body">
                                 <a href="{{route('Fees.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">اضافة رسوم جديدة</a><br><br>
+                                   aria-pressed="true">{{__('dashboard.Add_new_fees')}}</a><br><br>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -30,13 +30,13 @@
                                         <thead>
                                         <tr class="alert-success">
                                             <th>#</th>
-                                            <th>الاسم</th>
-                                            <th>المبلغ</th>
-                                            <th>المرحلة الدراسية</th>
-                                            <th>الصف الدراسي</th>
-                                            <th>السنة الدراسية</th>
-                                            <th>ملاحظات</th>
-                                            <th>العمليات</th>
+                                            <th>{{__('dashboard.name')}}</th>
+                                            <th>{{__('dashboard.Amount')}}</th>
+                                            <th>{{__('Students_trans.Grade')}}</th>
+                                            <th>{{__('Students_trans.classrooms')}}</th>
+                                            <th>{{__('Students_trans.academic_year')}}</th>
+                                            <th>{{__('grades_trans.Notes')}}</th>
+                                            <th>{{__('Students_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>

@@ -2,6 +2,7 @@
 
 return [
     'add_parent' => 'add parent',
+    'Name_parent' => 'Name parent',
     'Step1' => 'Father information',
     'Step2' => 'Mother information',
     'Step3' => 'Confirm information',
@@ -36,5 +37,8 @@ return [
     'Attachments' => 'Attachments',
     'Processes' => 'Processes',
 
-
+    'List_children' => ' List children',
+    'View_test_results' => 'View test results',
+    'List_test_results' => ' List test results',
+    'Date_taking_Quiz' => 'Date taking Quiz',
 ];

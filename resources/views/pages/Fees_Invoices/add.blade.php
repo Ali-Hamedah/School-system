@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        اضافة فاتورة جديدة
+        {{__('dashboard.Add_new_invoice')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        اضافة فاتورة جديدة {{$student->name}}
+        {{__('dashboard.Add_new_invoice')}}: {{$student->name}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -38,17 +38,19 @@
                                         <div class="row">
 
                                             <div class="col">
-                                                <label for="Name" class="mr-sm-2">اسم الطالب</label>
+                                                <label for="Name" class="mr-sm-2">{{__('Students_trans.name')}}</label>
                                                 <select class="fancyselect" name="student_id" required>
                                                     <option value="{{ $student->id }}">{{ $student->name }}</option>
                                                 </select>
                                             </div>
 
                                             <div class="col">
-                                                <label for="Name_en" class="mr-sm-2">نوع الرسوم</label>
+                                                <label for="Name_en"
+                                                       class="mr-sm-2">{{__('dashboard.Fee_Type')}}</label>
                                                 <div class="box">
                                                     <select class="fancyselect" name="fee_id" required>
-                                                        <option value="">-- اختار من القائمة --</option>
+                                                        <option value="">-- {{__('dashboard.Select_from_list')}}--
+                                                        </option>
                                                         @foreach($fees as $fee)
                                                             <option value="{{ $fee->id }}">{{ $fee->title }}</option>
                                                         @endforeach
@@ -58,10 +60,11 @@
                                             </div>
 
                                             <div class="col">
-                                                <label for="Name_en" class="mr-sm-2">المبلغ</label>
+                                                <label for="Name_en" class="mr-sm-2">{{__('dashboard.Amount')}}</label>
                                                 <div class="box">
                                                     <select class="fancyselect" name="amount" required>
-                                                        <option value="">-- اختار من القائمة --</option>
+                                                        <option value="">-- {{__('dashboard.Select_from_list')}}--
+                                                        </option>
                                                         @foreach($fees as $fee)
                                                             <option
                                                                 value="{{ $fee->amount }}">{{ $fee->amount }}</option>
@@ -71,7 +74,8 @@
                                             </div>
 
                                             <div class="col">
-                                                <label for="description" class="mr-sm-2">البيان</label>
+                                                <label for="description"
+                                                       class="mr-sm-2">{{__('dashboard.Statement')}}</label>
                                                 <div class="box">
                                                     <input type="text" class="form-control" name="description" required>
                                                 </div>
@@ -98,7 +102,8 @@
                                 <input type="hidden" name="Grade_id" value="{{$student->Grade_id}}">
                                 <input type="hidden" name="Classroom_id" value="{{$student->Classroom_id}}">
 
-                                <button type="submit" class="btn btn-primary">تاكيد البيانات</button>
+                                <button type="submit"
+                                        class="btn btn-primary">{{__('dashboard.Data_Confirmation')}}</button>
                             </div>
                         </div>
                     </form>

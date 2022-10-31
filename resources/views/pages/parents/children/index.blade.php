@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        قائمة الابناء
+        {{__('Parent_trans.List_children')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة الابناء
+        {{__('Parent_trans.List_children')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -52,13 +52,13 @@
                                                         <a class="btn btn-success btn-sm dropdown-toggle" href="#"
                                                            role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                                            aria-haspopup="true" aria-expanded="false">
-                                                            العمليات
+                                                            {{__('Parent_trans.Processes')}}
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                             <a class="dropdown-item"
                                                                href="{{route('sons.results',$student->id)}}"><i
-                                                                    style="color: #ffc107" class="far fa-eye "></i>&nbsp;عرض
-                                                                نتائج الاختبارات</a>
+                                                                    style="color: #ffc107" class="far fa-eye "></i>&nbsp; {{__('Parent_trans.View_test_results')}}
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </td>

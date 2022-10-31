@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        قائمة المواد الدراسية
+        {{__('main_trans.Subjects')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة المواد الدراسية
+        {{__('main_trans.Subjects')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -22,7 +22,7 @@
                         <div class="card card-statistics h-100">
                             <div class="card-body">
                                 <a href="{{route('subjects.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">اضافة مادة جديدة</a><br><br>
+                                   aria-pressed="true">{{__('dashboard.Add_new_Course')}}</a><br><br>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -30,11 +30,12 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم المادة</th>
-                                            <th>المرحلة الدراسية</th>
-                                            <th>الصف الدراسي</th>
-                                            <th>اسم المعلم</th>
-                                            <th>العمليات</th>
+                                            <th>{{__('dashboard.Course_Name')}}</th>
+                                            <th>{{__('Students_trans.Grade')}}</th>
+                                            <th>{{__('Students_trans.classrooms')}}</th>
+                                            <th>{{__('Teacher_trans.Name_Teacher')}}</th>
+                                            <th>{{__('Students_trans.Processes')}}</th>
+
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -65,8 +66,8 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 style="font-family: 'Cairo', sans-serif;"
-                                                                    class="modal-title" id="exampleModalLabel">حذف مادة
-                                                                    دراسية</h5>
+                                                                    class="modal-title"
+                                                                    id="exampleModalLabel">{{__('dashboard.Delete')}}</h5>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                         aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>

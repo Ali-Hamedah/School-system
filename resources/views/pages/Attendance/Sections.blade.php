@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        {{ trans('Sections_trans.title_page') }}: الحضور والغياب
+        {{__('Students_trans.List_attendance_students')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        {{ trans('Sections_trans.title_page') }}: الحضور والغياب
+        {{ trans('Sections_trans.title_page') }}:  : {{__('main_trans.Attendance')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -81,8 +81,8 @@
                                                                         <td>
                                                                             <a href="{{route('Attendance.show',$list_Sections->id)}}"
                                                                                class="btn btn-warning btn-sm"
-                                                                               role="button" aria-pressed="true">قائمة
-                                                                                الطلاب</a>
+                                                                               role="button"
+                                                                               aria-pressed="true">{{__('main_trans.list_students')}}</a>
                                                                         </td>
                                                                     </tr>
                                                                 @endforeach

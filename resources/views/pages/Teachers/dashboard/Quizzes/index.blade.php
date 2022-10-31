@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        قائمة الاختبارات
+        {{__('main_trans.List_tests')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة الاختبارات
+        {{__('main_trans.List_tests')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -22,7 +22,7 @@
                         <div class="card card-statistics h-100">
                             <div class="card-body">
                                 <a href="{{route('quizzes.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">اضافة اختبار جديد</a><br><br>
+                                   aria-pressed="true">{{__('dashboard.Add_New_Quiz')}}</a><br><br>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -30,12 +30,12 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم الاختبار</th>
-                                            <th>اسم المعلم</th>
-                                            <th>المرحلة الدراسية</th>
-                                            <th>الصف الدراسي</th>
-                                            <th>القسم</th>
-                                            <th>العمليات</th>
+                                            <th>{{__('dashboard.Quiz_Name')}}</th>
+                                            <th>{{__('Teacher_trans.Name_Teacher')}}</th>
+                                            <th>{{__('Students_trans.Grade')}}</th>
+                                            <th>{{__('Students_trans.classrooms')}}</th>
+                                            <th>{{__('Students_trans.section')}}</th>
+                                            <th>{{__('Students_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -53,15 +53,18 @@
                                                             class="fa fa-edit"></i></a>
                                                     <button type="button" class="btn btn-danger btn-sm"
                                                             data-toggle="modal"
-                                                            data-target="#delete_exam{{ $quizze->id }}" title="حذف"><i
+                                                            data-target="#delete_exam{{ $quizze->id }}"
+                                                            title="{{__('dashboard.Delete')}}"><i
                                                             class="fa fa-trash"></i></button>
                                                     <a href="{{route('quizzes.show',$quizze->id)}}"
-                                                       class="btn btn-warning btn-sm" title="عرض الاسئلة" role="button"
+                                                       class="btn btn-warning btn-sm"
+                                                       title="{{__('dashboard.View_questions')}}" role="button"
                                                        aria-pressed="true"><i
                                                             class="fa fa-binoculars"></i></a>
 
                                                     <a href="{{route('student.quizze',$quizze->id)}}"
-                                                       class="btn btn-primary btn-sm" title="عرض الطلاب المختبرين"
+                                                       class="btn btn-primary btn-sm"
+                                                       title="{{__('dashboard.View_tested_students')}}"
                                                        role="button" aria-pressed="true"><i
                                                             class="fa fa-street-view"></i></a>
 
@@ -79,8 +82,8 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 style="font-family: 'Cairo', sans-serif;"
-                                                                    class="modal-title" id="exampleModalLabel">حذف
-                                                                    اختبار</h5>
+                                                                    class="modal-title"
+                                                                    id="exampleModalLabel">{{__('dashboard.Delete')}}</h5>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                         aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>

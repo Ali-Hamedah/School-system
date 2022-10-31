@@ -35,4 +35,6 @@ class Fee_invoice extends Model
     {
         return $this->belongsTo('App\Models\Fee', 'fee_id');
     }
+
+
 }

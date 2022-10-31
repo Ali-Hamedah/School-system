@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        قائمة الكتب
+        {{__('main_trans.List_books')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة الكتب
+        {{__('main_trans.List_books')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -22,7 +22,7 @@
                         <div class="card card-statistics h-100">
                             <div class="card-body">
                                 <a href="{{route('library.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">اضافة كتاب جديد</a><br><br>
+                                   aria-pressed="true">{{__('dashboard.Add_New_Book')}}</a><br><br>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -30,12 +30,12 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم الكتب</th>
-                                            <th>اسم المعلم</th>
-                                            <th>المرحلة الدراسية</th>
-                                            <th>الصف الدراسي</th>
-                                            <th>القسم</th>
-                                            <th>العمليات</th>
+                                            <th>{{__('dashboard.Name_Book')}}</th>
+                                            <th>{{__('Teacher_trans.Name_Teacher')}}</th>
+                                            <th>{{trans('Students_trans.Grade')}}</th>
+                                            <th>{{trans('Students_trans.classrooms')}}</th>
+                                            <th>{{trans('Students_trans.section')}}</th>
+                                            <th>{{trans('Students_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>

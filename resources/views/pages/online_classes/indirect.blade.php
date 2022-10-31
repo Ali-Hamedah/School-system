@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        اضافة حصة جديدة اوفلاين
+        {{__('dashboard.Add_new_offline_share')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        اضافة حصة جديدة اوفلاين
+        {{__('dashboard.Add_new_offline_share')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -29,7 +29,7 @@
                         </div>
                     @endif
 
-                    <form method="post" action="{{ route('indirect.store') }}" autocomplete="off">
+                    <form method="post" action="{{ route('indirect.store.admin') }}" autocomplete="off">
                         @csrf
                         <div class="row">
                             <div class="col-md-4">
@@ -70,7 +70,8 @@
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>رقم الاجتماع : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Meeting_Number')}} : <span
+                                            class="text-danger">*</span></label>
                                     <input class="form-control" name="meeting_id" type="number">
                                 </div>
                             </div>
@@ -78,27 +79,28 @@
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>عنوان الحصة : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Class_Title')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" name="topic" type="text">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>تاريخ ووقت الحصة : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Date_and_time_class')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" type="datetime-local" name="start_time">
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>مدة الحصة بالدقائق : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Class_time')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" name="duration" type="number">
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>كلمة المرور الاجتماع : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Meeting_Password')}} : <span
+                                            class="text-danger">*</span></label>
                                     <input class="form-control" name="password" type="text">
                                 </div>
                             </div>
@@ -110,14 +112,14 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>لينك البدء : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Start_Link')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" name="start_url" type="text">
                                 </div>
                             </div>
 
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label>لينك الدخول للطلاب : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Student_Link')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" name="join_url" type="text">
                                 </div>
                             </div>

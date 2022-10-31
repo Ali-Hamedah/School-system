@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        تعديل سؤال
+        {{__('dashboard.Edit_Question')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        تعديل سؤال :<span class="text-danger">{{$question->title}}</span>
+        {{__('dashboard.Edit_Question')}} :<span class="text-danger">{{$question->title}}</span>
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -37,7 +37,7 @@
                                 <div class="form-row">
 
                                     <div class="col">
-                                        <label for="title">اسم السؤال</label>
+                                        <label for="title">{{__('dashboard.Question')}}</label>
                                         <input type="text" name="title" id="input-name"
                                                class="form-control form-control-alternative"
                                                value="{{$question->title}}">
@@ -48,7 +48,7 @@
 
                                 <div class="form-row">
                                     <div class="col">
-                                        <label for="title">الاجابات</label>
+                                        <label for="title">{{__('dashboard.Answers')}}</label>
                                         <textarea name="answers" class="form-control" id="exampleFormControlTextarea1"
                                                   rows="4">{{$question->answers}}</textarea>
                                     </div>
@@ -57,7 +57,7 @@
 
                                 <div class="form-row">
                                     <div class="col">
-                                        <label for="title">الاجابة الصحيحة</label>
+                                        <label for="title">{{__('dashboard.Right_answer')}}</label>
                                         <input type="text" name="right_answer" id="input-name"
                                                class="form-control form-control-alternative"
                                                value="{{$question->right_answer}}">
@@ -68,9 +68,13 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Grade_id">الدرجة : <span class="text-danger">*</span></label>
+                                            <label for="Grade_id">{{__('dashboard.Quiz_Name')}} : <span
+                                                    class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="score">
-                                                <option selected disabled> حدد الدرجة...</option>
+                                                <option selected
+                                                        disabled> {{__('dashboard.choose')}} {{__('dashboard.Quiz_Name')}}
+                                                    ...
+                                                </option>
                                                 <option value="5" {{$question->score == 5 ? 'selected':''}}>5</option>
                                                 <option value="10" {{$question->score == 10 ? 'selected':''}}>10
                                                 </option>
@@ -83,8 +87,8 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ
-                                    البيانات
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
+                                        type="submit">{{__('grades_trans.submit')}}
                                 </button>
                             </form>
                         </div>

@@ -3,6 +3,7 @@
 return [
 
     'add_parent' => 'اضافة ولي امر',
+    'Name_parent' => 'اسم ولي امر',
     'edit_parent' => 'تعديل ولي امر',
     'Step1' => 'معلومات الاب',
     'Step2' => 'معلومات الام',
@@ -38,6 +39,11 @@ return [
     'Choose' => 'اختيار من القائمة',
     'Attachments' => 'المرفقات',
     'Processes' => 'العمليات',
+
+    'List_children' => ' قائمة الابناء',
+    'View_test_results' => 'عرض نتائج الاختبارات',
+    'List_test_results' => ' قائمة نتائج الاختبارات',
+    'Date_taking_Quiz' => 'تاريخ اجراء الاختبار',
 
 
 ];

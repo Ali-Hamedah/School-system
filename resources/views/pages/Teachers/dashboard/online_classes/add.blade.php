@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        اضافة حصة جديدة
+        {{__('dashboard.Add_new_online_share')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        اضافة حصة جديدة
+        {{__('dashboard.Add_new_online_share')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -70,20 +70,20 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>عنوان الحصة : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Class_Title')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" name="topic" type="text">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>تاريخ ووقت الحصة : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Date_and_time_class')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" type="datetime-local" name="start_time">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>مدة الحصة بالدقائق : <span class="text-danger">*</span></label>
+                                    <label>{{__('dashboard.Class_time')}} : <span class="text-danger">*</span></label>
                                     <input class="form-control" name="duration" type="text">
                                 </div>
                             </div>

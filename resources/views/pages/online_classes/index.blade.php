@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        حصص اونلاين
+        {{__('main_trans.Onlineclasses')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        حصص اونلاين
+        {{__('main_trans.Onlineclasses')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -21,28 +21,27 @@
                     <div class="col-xl-12 mb-30">
                         <div class="card card-statistics h-100">
                             <div class="card-body">
-                                <a href="{{route('online_classes.create')}}" class="btn btn-success btn-sm"
-                                   role="button"
-                                   aria-pressed="true">اضافة حصة جديدة</a>
-                                <a class="btn btn-warning" href="{{route('indirect.create')}}">اضافة حصة اوفلاين
-                                    جديدة</a>
-                                <br><br>
+                                <a href="{{route('online_classes.create')}}" class="btn btn-success" role="button"
+                                   aria-pressed="true">{{__('dashboard.Add_new_online_share')}}</a>
+                                <a class="btn btn-warning"
+                                   href="{{route('indirect.create.admin')}}">{{__('dashboard.Add_new_offline_share')}}</a>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
+
                                            data-page-length="50"
                                            style="text-align: center">
                                         <thead>
                                         <tr class="alert-success">
                                             <th>#</th>
-                                            <th>المرحلة</th>
-                                            <th>الصف</th>
-                                            <th>القسم</th>
-                                            <th>المعلم</th>
-                                            <th>عنوان الحصة</th>
-                                            <th>تاريخ البداية</th>
-                                            <th>وقت الحصة</th>
-                                            <th>رابط الحصة</th>
-                                            <th>العمليات</th>
+                                            <th>{{__('dashboard.Grade')}}</th>
+                                            <th>{{__('dashboard.Class')}}</th>
+                                            <th>{{__('dashboard.Section')}}</th>
+                                            <th>{{__('dashboard.Teacher')}}</th>
+                                            <th>{{__('dashboard.Class_Title')}}</th>
+                                            <th>{{__('dashboard.Start_Date')}}</th>
+                                            <th>{{__('dashboard.Class_time')}}</th>
+                                            <th>{{__('dashboard.Class_link')}}</th>
+                                            <th>{{__('Students_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -57,7 +56,8 @@
                                                 <td>{{$online_classe->start_at}}</td>
                                                 <td>{{$online_classe->duration}}</td>
                                                 <td class="text-danger"><a href="{{$online_classe->join_url}}"
-                                                                           target="_blank">انضم الان</a></td>
+                                                                           target="_blank">{{__('dashboard.Join_Now')}}</a>
+                                                </td>
                                                 <td>
                                                     <button type="button" class="btn btn-danger btn-sm"
                                                             data-toggle="modal"

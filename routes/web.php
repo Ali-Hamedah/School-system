@@ -75,8 +75,8 @@ Route::group(
     //==============================Students============================
     Route::group(['namespace' => 'Students'], function () {
         Route::resource('Students', 'StudentController');
-        Route::get('/indirect', 'OnlineClasseController@indirectCreate')->name('indirect.create');
-        Route::post('/indirect', 'OnlineClasseController@storeIndirect')->name('indirect.store');
+        Route::get('indirect_admin', 'OnlineClasseController@indirectCreate')->name('indirect.create.admin');
+        Route::post('indirect_admin', 'OnlineClasseController@storeIndirect')->name('indirect.store.admin');
         Route::resource('online_classes', 'OnlineClasseController');
         Route::resource('Graduated', 'GraduatedController');
         Route::resource('Promotion', 'PromotionController');

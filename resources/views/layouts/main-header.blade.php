@@ -36,7 +36,7 @@ header start-->
                     aria-haspopup="true" aria-expanded="false">
                 @if (App::getLocale() == 'ar')
                     {{ LaravelLocalization::getCurrentLocaleName() }}
-                    <img src="{{ URL::asset('assets/images/flags/EG.png') }}" alt="">
+                    <img src="{{ URL::asset('assets/images/flags/YE.png') }}" alt="">
                 @else
                     {{ LaravelLocalization::getCurrentLocaleName() }}
                     <img src="{{ URL::asset('assets/images/flags/US.png') }}" alt="">
@@ -128,7 +128,8 @@ header start-->
                 <a class="dropdown-item" href="#"><i class="text-dark ti-layers-alt"></i>Projects <span
                         class="badge badge-info">6</span> </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>Settings</a>
+                <a class="dropdown-item" href="{{route('settings.index')}}"><i
+                        class="text-info ti-settings"></i>{{__('main_trans.Settings')}}</a>
                 @if(auth('student')->check())
                     <form method="GET" action="{{ route('logout','student') }}">
                         @elseif(auth('teacher')->check())
@@ -142,7 +143,7 @@ header start-->
                                                 @csrf
                                                 <a class="dropdown-item" href="#"
                                                    onclick="event.preventDefault();this.closest('form').submit();"><i
-                                                        class="bx bx-log-out"></i>تسجيل الخروج</a>
+                                                        class="bx bx-log-out"></i>{{__('main_trans.Log_out')}}</a>
                                             </form>
 
             </div>

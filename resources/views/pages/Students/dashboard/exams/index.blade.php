@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        قائمة الاختبارات
+        {{__('main_trans.List_tests')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة الاختبارات
+        {{__('main_trans.List_tests')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -28,9 +28,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>المادة الدراسية</th>
-                                            <th>اسم الاختبار</th>
-                                            <th>دخول / درجة الاختبار</th>
+                                            <th>{{__('Students_trans.Course')}}</th>
+                                            <th>{{__('dashboard.Quiz_Name')}}</th>
+                                            <th>{{__('Students_trans.Entry_Test_Score')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>

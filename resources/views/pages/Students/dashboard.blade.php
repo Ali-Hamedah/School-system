@@ -40,7 +40,8 @@ preloader -->
         <div class="page-title">
             <div class="row">
                 <div class="col-sm-6">
-                    <h4 class="mb-0" style="font-family: 'Cairo', sans-serif">مرحبا بك : {{auth()->user()->name}}</h4>
+                    <h4 class="mb-0" style="font-family: 'Cairo', sans-serif">{{__('dashboard.Welcome')}}
+                        : {{auth()->user()->name}}</h4>
                 </div>
                 <br><br>
                 <div class="col-sm-6">

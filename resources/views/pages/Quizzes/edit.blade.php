@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        تعديل اختبار {{$quizz->name}}
+        {{__('dashboard.Edit_Quiz')}}: {{$quizz->name}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        تعديل اختبار {{$quizz->name}}
+        {{__('dashboard.Edit_Quiz')}}: <span class="text-danger">{{$quizz->name}}</span>
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -36,14 +36,14 @@
                                 <div class="form-row">
 
                                     <div class="col">
-                                        <label for="title">اسم الاختبار باللغة العربية</label>
+                                        <label for="title">{{__('dashboard.Quiz_Name_ar')}}</label>
                                         <input type="text" name="Name_ar"
                                                value="{{$quizz->getTranslation('name','ar')}}" class="form-control">
                                         <input type="hidden" name="id" value="{{$quizz->id}}">
                                     </div>
 
                                     <div class="col">
-                                        <label for="title">اسم الاختبار باللغة الانجليزية</label>
+                                        <label for="title">{{__('dashboard.Quiz_Name_en')}}</label>
                                         <input type="text" name="Name_en"
                                                value="{{$quizz->getTranslation('name','en')}}" class="form-control">
                                     </div>
@@ -54,7 +54,7 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Grade_id">المادة الدراسية : <span
+                                            <label for="Grade_id">{{__('dashboard.Course_Name')}} : <span
                                                     class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="subject_id">
                                                 @foreach($subjects as $subject)
@@ -67,7 +67,7 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Grade_id">اسم المعلم : <span
+                                            <label for="Grade_id">{{__('Teacher_trans.Name_Teacher')}} : <span
                                                     class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="teacher_id">
                                                 @foreach($teachers as $teacher)
@@ -117,8 +117,8 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">تاكيد
-                                    البيانات
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
+                                        type="submit">{{__('grades_trans.submit')}}
                                 </button>
                             </form>
                         </div>

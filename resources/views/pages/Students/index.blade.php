@@ -56,41 +56,42 @@
                                                         <a class="btn btn-success btn-sm dropdown-toggle" href="#"
                                                            role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                                            aria-haspopup="true" aria-expanded="false">
-                                                            العمليات
+                                                            {{trans('Students_trans.Processes')}}
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                             <a class="dropdown-item"
                                                                href="{{route('Students.show',$student->id)}}"><i
                                                                     style="color: #ffc107" class="far fa-eye "></i>&nbsp;
-                                                                عرض بيانات الطالب</a>
+                                                                {{__('Students_trans.View_student_data')}}</a>
                                                             <a class="dropdown-item"
                                                                href="{{route('Students.edit',$student->id)}}"><i
                                                                     style="color:green" class="fa fa-edit"></i>&nbsp;
-                                                                تعديل بيانات الطالب</a>
+                                                                {{__('Students_trans.Student_Edit')}}</a>
                                                             <a class="dropdown-item"
                                                                href="{{route('Fees_Invoices.show',$student->id)}}"><i
-                                                                    style="color: #0000cc" class="fa fa-edit"></i>&nbsp;اضافة
-                                                                فاتورة رسوم&nbsp;</a>
+                                                                    style="color: #0000cc"
+                                                                    class="fa fa-edit"></i>&nbsp;{{__('dashboard.Add_new_invoice')}}
+                                                                &nbsp;</a>
                                                             <a class="dropdown-item"
                                                                href="{{route('receipt_students.show',$student->id)}}"><i
                                                                     style="color: #9dc8e2"
-                                                                    class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;سند
-                                                                قبض</a>
+                                                                    class="fas fa-money-bill-alt"></i>&nbsp;
+                                                                &nbsp;{{__('dashboard.Receipt')}}</a>
                                                             <a class="dropdown-item"
                                                                href="{{route('ProcessingFee.show',$student->id)}}"><i
                                                                     style="color: #9dc8e2"
                                                                     class="fas fa-money"></i>&nbsp; &nbsp;
-                                                                استبعاد رسوم</a>
+                                                                {{__('dashboard.Exclusion_fees')}}</a>
                                                             <a class="dropdown-item"
                                                                href="{{route('Payment_students.show',$student->id)}}"><i
                                                                     style="color:goldenrod" class="fas fa-donate"></i>&nbsp;
-                                                                &nbsp;سند صرف</a>
+                                                                &nbsp;{{__('dashboard.Exchange_Deed')}}</a>
                                                             <a class="dropdown-item"
                                                                data-target="#Delete_Student{{ $student->id }}"
                                                                data-toggle="modal"
                                                                href="##Delete_Student{{ $student->id }}"><i
                                                                     style="color: red" class="fa fa-trash"></i>&nbsp;
-                                                                حذف بيانات الطالب</a>
+                                                                {{__('Students_trans.Deleted_Student')}}</a>
                                                         </div>
                                                     </div>
                                                 </td>
