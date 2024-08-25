@@ -28,6 +28,13 @@ Route::group(
     Route::group(['namespace' => 'Students\dashboard'], function () {
         Route::resource('student_exams', 'ExamsController');
         Route::resource('profile_student', 'ProfileController');
+
+        
+        Route::get('/books/{id}', 'BooksController@books')->name('student_books');
+
+        Route::get('/downloadAttachment/{id}', 'BooksController@downloadAttachment')->name('student_downloadAttachment');
+
+        Route::get('/viewAttachment/{file_name}', 'BooksController@viewAttachment')->name('student_viewAttachment');
     });
 
 });

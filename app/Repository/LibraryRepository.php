@@ -34,7 +34,7 @@ class LibraryRepository implements LibraryRepositoryInterface
             $books->section_id = $request->section_id;
             $books->teacher_id = 1;
             $books->save();
-            $this->uploadFile($request, 'file_name');
+            $this->uploadFile($request, 'file_name', 'library');
 
             toastr()->success(trans('messages.success'));
             return redirect()->route('library.create');

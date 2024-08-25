@@ -15,9 +15,15 @@
 
         <!-- الامتحانات-->
         <li>
-            <a href="{{route('student_exams.index')}}"><i class="fas fa-book-open"></i><span
+            <a href="{{route('student_exams.index')}}"><i class="fas fa-pen"></i><span
                     class="right-nav-text">{{__('main_trans.Quizzes')}}</span></a>
         </li>
+
+        <li>
+            <a href="{{route('student_books', ['id' => Auth::user()->id])}}"><i class="fas fa-book-open"></i><span
+                    class="right-nav-text">{{__('main_trans.library')}}</span></a>
+        </li>
+
 
 
         <!-- Settings-->
