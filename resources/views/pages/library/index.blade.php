@@ -49,7 +49,7 @@
                                                 <td>{{$book->section->Name_Section}}</td>
                                                 <td>
                                                     <a href="{{route('downloadAttachment',$book->file_name)}}"
-                                                       title="تحميل الكتاب" class="btn btn-warning btn-sm" role="button"
+                                                       title="download" class="btn btn-warning btn-sm" role="button"
                                                        aria-pressed="true"><i class="ti-download "></i></a>
                                                     <a href="{{route('library.edit',$book->id)}}"
                                                        class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
