@@ -20,4 +20,9 @@ class BooksController extends Controller
         $book = Library::where('file_name', $file_name)->firstOrFail();
         return view('pages.Students.dashboard.library.view', compact('book'));
     }
+
+    public function downloadAttachment($filename)
+    {
+        return response()->download(public_path('attachments/library/' . $filename));
+    }
 }

@@ -32,7 +32,7 @@ Route::group(
         
         Route::get('/books/{id}', 'BooksController@books')->name('student_books');
 
-        Route::get('/downloadAttachment/{id}', 'BooksController@downloadAttachment')->name('student_downloadAttachment');
+        Route::get('/downloadAttachment/{filename}', 'BooksController@downloadAttachment')->name('student_downloadAttachment');
 
         Route::get('/viewAttachment/{file_name}', 'BooksController@viewAttachment')->name('student_viewAttachment');
     });
