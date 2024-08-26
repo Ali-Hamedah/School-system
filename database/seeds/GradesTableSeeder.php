@@ -4,7 +4,7 @@ use App\Models\Grade;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class GradeTableSeeder extends Seeder
+class GradesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
