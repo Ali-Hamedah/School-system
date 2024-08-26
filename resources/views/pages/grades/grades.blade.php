@@ -223,8 +223,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">{{ trans('Grades_trans.Close') }}</button>
-                        <button type="submit" class="btn btn-success">{{ trans('Grades_trans.submit') }}</button>
+                                data-dismiss="modal">{{ trans('grades_trans.Close') }}</button>
+                        <button type="submit" class="btn btn-success">{{ trans('grades_trans.submit') }}</button>
                     </div>
                     </form>
 
