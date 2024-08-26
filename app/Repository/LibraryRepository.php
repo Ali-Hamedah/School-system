@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
-use App\Http\Traits\AttachFilesTrait;
 use App\Models\Grade;
 use App\Models\Library;
+use App\Models\Classroom;
+use App\Http\Traits\AttachFilesTrait;
 
 class LibraryRepository implements LibraryRepositoryInterface
 {
@@ -13,8 +14,10 @@ class LibraryRepository implements LibraryRepositoryInterface
 
     public function index()
     {
-        $books = Library::all();
-        return view('pages.library.index', compact('books'));
+        $Grades = Grade::all();
+        $list_Grades = Grade::all();
+        $classrooms = Classroom::all();
+        return view('pages.library.index', compact('Grades', 'list_Grades', 'classrooms'));
     }
 
     public function create()
@@ -46,8 +49,20 @@ class LibraryRepository implements LibraryRepositoryInterface
     public function edit($id)
     {
         $grades = Grade::all();
+        $classrooms = Classroom::all();
         $book = library::findorFail($id);
-        return view('pages.library.edit', compact('book', 'grades'));
+        return view('pages.library.edit', compact('book', 'grades', 'classrooms'));
+    }
+
+    public function books($grade, $classroom)
+    {
+        // استخدام المعرفات في الاستعلام
+        $Grades = Grade::all();
+        $books = Library::where('Grade_id', $grade)
+            ->where('Classroom_id', $classroom)
+            ->get();
+
+        return view('pages.library.show', compact('books', 'Grades'));
     }
 
     public function update($request)
@@ -92,4 +107,9 @@ class LibraryRepository implements LibraryRepositoryInterface
         return response()->download(public_path('attachments/library/' . $filename));
     }
 
+    public function viewAttachment($file_name)
+    {
+        $book = Library::where('file_name', $file_name)->firstOrFail();
+        return view('pages.library.view', compact('book'));
+    }
 }

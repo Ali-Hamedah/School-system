@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Students;
 
+use App\Models\Grade;
+use App\Models\Library;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repository\LibraryRepositoryInterface;
-use Illuminate\Http\Request;
 
 class LibraryController extends Controller
 {
@@ -37,6 +39,10 @@ class LibraryController extends Controller
         return $this->library->edit($id);
     }
 
+    public function books($grade, $classroom)
+    {
+        return $this->library->books($grade, $classroom);
+    }
 
     public function update(Request $request)
     {
@@ -52,5 +58,10 @@ class LibraryController extends Controller
     public function downloadAttachment($filename)
     {
         return $this->library->download($filename);
+    }
+
+    public function viewAttachment($file_name)
+    {
+        return $this->library->viewAttachment($file_name);
     }
 }

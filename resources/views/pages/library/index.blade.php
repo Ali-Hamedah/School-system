@@ -1,80 +1,94 @@
 @extends('layouts.master')
 @section('css')
-    @toastr_css
-    @section('title')
-        {{__('main_trans.List_books')}}
-    @stop
+
+@section('title')
+    {{ trans('Sections_trans.title_page') }}
+@stop
 @endsection
 @section('page-header')
-    <!-- breadcrumb -->
-    @section('PageTitle')
-        {{__('main_trans.List_books')}}
-    @stop
-    <!-- breadcrumb -->
+<!-- breadcrumb -->
+@section('PageTitle')
+    {{ trans('Sections_trans.title_page') }}
+@stop
+<!-- breadcrumb -->
 @endsection
 @section('content')
-    <!-- row -->
-    <div class="row">
-        <div class="col-md-12 mb-30">
+<!-- row -->
+<div class="row">
+    <div class="col-md-12 mb-30">
+        <div class="card card-statistics h-100">
+
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
             <div class="card card-statistics h-100">
                 <div class="card-body">
-                    <div class="col-xl-12 mb-30">
-                        <div class="card card-statistics h-100">
-                            <div class="card-body">
-                                <a href="{{route('library.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">{{__('dashboard.Add_New_Book')}}</a><br><br>
-                                <div class="table-responsive">
-                                    <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
-                                           data-page-length="50"
-                                           style="text-align: center">
-                                        <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>{{__('dashboard.Name_Book')}}</th>
-                                            <th>{{__('Teacher_trans.Name_Teacher')}}</th>
-                                            <th>{{trans('Students_trans.Grade')}}</th>
-                                            <th>{{trans('Students_trans.classrooms')}}</th>
-                                            <th>{{trans('Students_trans.section')}}</th>
-                                            <th>{{trans('Students_trans.Processes')}}</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($books as $book)
-                                            <tr>
-                                                <td>{{ $loop->iteration}}</td>
-                                                <td>{{$book->title}}</td>
-                                                <td>{{$book->teacher->Name}}</td>
-                                                <td>{{$book->grade->Name}}</td>
-                                                <td>{{$book->classroom->Name_Class}}</td>
-                                                <td>{{$book->section->Name_Section}}</td>
-                                                <td>
-                                                    <a href="{{route('downloadAttachment',$book->file_name)}}"
-                                                       title="download" class="btn btn-warning btn-sm" role="button"
-                                                       aria-pressed="true"><i class="ti-download "></i></a>
-                                                    <a href="{{route('library.edit',$book->id)}}"
-                                                       class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
-                                                            class="fa fa-edit"></i></a>
-                                                    <button type="button" class="btn btn-danger btn-sm"
-                                                            data-toggle="modal"
-                                                            data-target="#delete_book{{ $book->id }}" title="حذف"><i
-                                                            class="fa fa-trash"></i></button>
-                                                </td>
-                                            </tr>
+                    <div class="accordion gray plus-icon round">
 
-                                        @include('pages.library.destroy')
-                                        @endforeach
-                                    </table>
+                        @foreach ($Grades as $Grade)
+                            <div class="acd-group">
+                                <a href="#" class="acd-heading">{{ $Grade->Name }}</a>
+                                <div class="acd-des">
+
+                                    <div class="row">
+                                        <div class="col-xl-12 mb-30">
+                                            <div class="card card-statistics h-100">
+                                                <div class="card-body">
+                                                    <div class="d-block d-md-flex justify-content-between">
+                                                        <div class="d-block">
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive mt-15">
+                                                        <table class="table center-aligned-table mb-0">
+                                                            <thead>
+                                                                <tr class="text-dark">
+                                                                    <th>#</th>
+                                                                    <th>{{ trans('Sections_trans.Name_Section') }}
+                                                                    </th>
+                                                                    <th>{{ trans('Sections_trans.Name_Class') }}</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <?php $i = 0; ?>
+                                                                @foreach ($Grade->Sections as $list_Sections)
+                                                                    <tr>
+                                                                        <?php $i++; ?>
+                                                                        <td>{{ $i }}</td>
+                                                                        <td>{{ $list_Sections->Name_Section }}</td>
+                                                                        <td>
+                                                                            <a href="{{ route('library.books', [$Grade->id, $list_Sections->My_classs->id]) }}"
+                                                                                style="color: blue">
+                                                                                {{ $list_Sections->My_classs->Name_Class }}
+                                                                            </a>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- row closed -->
-@endsection
-@section('js')
-    @toastr_js
-    @toastr_render
+</div>
+
 @endsection

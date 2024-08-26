@@ -25,89 +25,89 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('/login', 'LoginController@login')->name('login');
 
     Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
-
-
 });
 //==============================Translate all pages============================
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
-    ], function () {
+    ],
+    function () {
 
-    //==============================dashboard============================
-    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+        //==============================dashboard============================
+        Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
-    //==============================dashboard============================
-    Route::group(['namespace' => 'Grades'], function () {
-        Route::resource('Grades', 'GradeController');
-    });
+        //==============================dashboard============================
+        Route::group(['namespace' => 'Grades'], function () {
+            Route::resource('Grades', 'GradeController');
+        });
 
-    //==============================Classrooms============================
-    Route::group(['namespace' => 'Classrooms'], function () {
-        Route::resource('Classrooms', 'ClassroomController');
-        Route::post('delete_all', 'ClassroomController@delete_all')->name('delete_all');
+        //==============================Classrooms============================
+        Route::group(['namespace' => 'Classrooms'], function () {
+            Route::resource('Classrooms', 'ClassroomController');
+            Route::post('delete_all', 'ClassroomController@delete_all')->name('delete_all');
 
-        Route::post('Filter_Classes', 'ClassroomController@Filter_Classes')->name('Filter_Classes');
+            Route::post('Filter_Classes', 'ClassroomController@Filter_Classes')->name('Filter_Classes');
+        });
 
-    });
 
+        //==============================Sections============================
 
-    //==============================Sections============================
+        Route::group(['namespace' => 'Sections'], function () {
 
-    Route::group(['namespace' => 'Sections'], function () {
+            Route::resource('Sections', 'SectionController');
 
-        Route::resource('Sections', 'SectionController');
+            Route::get('/classes/{id}', 'SectionController@getclasses');
+        });
 
-        Route::get('/classes/{id}', 'SectionController@getclasses');
+        //==============================parents============================
 
-    });
+        Route::view('add_parent', 'livewire.show_Form')->name('add_parent');
 
-    //==============================parents============================
+        //==============================Teachers============================
+        Route::group(['namespace' => 'Teachers'], function () {
+            Route::resource('Teachers', 'TeacherController');
+        });
 
-    Route::view('add_parent', 'livewire.show_Form')->name('add_parent');
+        //==============================Students============================
+        Route::group(['namespace' => 'Students'], function () {
+            Route::resource('Students', 'StudentController');
+            Route::get('indirect_admin', 'OnlineClasseController@indirectCreate')->name('indirect.create.admin');
+            Route::post('indirect_admin', 'OnlineClasseController@storeIndirect')->name('indirect.store.admin');
+            Route::resource('online_classes', 'OnlineClasseController');
+            Route::resource('Graduated', 'GraduatedController');
+            Route::resource('Promotion', 'PromotionController');
+            Route::resource('Fees_Invoices', 'FeesInvoicesController');
+            Route::resource('Fees', 'FeesController');
+            Route::resource('receipt_students', 'ReceiptStudentsController');
+            Route::resource('ProcessingFee', 'ProcessingFeeController');
+            Route::resource('Payment_students', 'PaymentController');
+            Route::resource('Attendance', 'AttendanceController');
+            Route::get('download_file/{filename}', 'LibraryController@downloadAttachment')->name('downloadAttachment');
+            Route::get('/viewBooks/{file_name}', 'LibraryController@viewAttachment')->name('viewBooks');
+            Route::get('/library/{grade}/{classroom}', 'LibraryController@books')->name('library.books');
+            Route::resource('library', 'LibraryController');
+            Route::post('Upload_attachment', 'StudentController@Upload_attachment')->name('Upload_attachment');
+            Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
+            Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
+        });
 
-    //==============================Teachers============================
-    Route::group(['namespace' => 'Teachers'], function () {
-        Route::resource('Teachers', 'TeacherController');
-    });
+        //==============================subjects============================
+        Route::group(['namespace' => 'Subjects'], function () {
+            Route::resource('subjects', 'SubjectController');
+        });
 
-    //==============================Students============================
-    Route::group(['namespace' => 'Students'], function () {
-        Route::resource('Students', 'StudentController');
-        Route::get('indirect_admin', 'OnlineClasseController@indirectCreate')->name('indirect.create.admin');
-        Route::post('indirect_admin', 'OnlineClasseController@storeIndirect')->name('indirect.store.admin');
-        Route::resource('online_classes', 'OnlineClasseController');
-        Route::resource('Graduated', 'GraduatedController');
-        Route::resource('Promotion', 'PromotionController');
-        Route::resource('Fees_Invoices', 'FeesInvoicesController');
-        Route::resource('Fees', 'FeesController');
-        Route::resource('receipt_students', 'ReceiptStudentsController');
-        Route::resource('ProcessingFee', 'ProcessingFeeController');
-        Route::resource('Payment_students', 'PaymentController');
-        Route::resource('Attendance', 'AttendanceController');
-        Route::get('download_file/{filename}', 'LibraryController@downloadAttachment')->name('downloadAttachment');
-        Route::resource('library', 'LibraryController');
-        Route::post('Upload_attachment', 'StudentController@Upload_attachment')->name('Upload_attachment');
-        Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
-        Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
-    });
+        //==============================Quizzes============================
+        Route::group(['namespace' => 'Quizzes'], function () {
+            Route::resource('Quizzes', 'QuizzeController');
+        });
 
-    //==============================subjects============================
-    Route::group(['namespace' => 'Subjects'], function () {
-        Route::resource('subjects', 'SubjectController');
-    });
+        //==============================questions============================
+        Route::group(['namespace' => 'questions'], function () {
+            Route::resource('questions', 'QuestionController');
+        });
 
-    //==============================Quizzes============================
-    Route::group(['namespace' => 'Quizzes'], function () {
-        Route::resource('Quizzes', 'QuizzeController');
-    });
-
-    //==============================questions============================
-    Route::group(['namespace' => 'questions'], function () {
-        Route::resource('questions', 'QuestionController');
-    });
-
-    //==============================Setting============================
-    Route::resource('settings', 'SettingController');
-});
+        //==============================Setting============================
+        Route::resource('settings', 'SettingController');
+    }
+);
