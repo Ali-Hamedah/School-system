@@ -10,7 +10,7 @@ class Grade extends Model
     use HasTranslations;
 
     public $translatable = ['Name'];// خاص بادخال البيانات بترجمه
-    protected $table = 'Grades';
+    protected $table = 'grades';
     protected $fillable = ['Name', 'Notes'];
     public $timestamps = true;
 
