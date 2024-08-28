@@ -16,14 +16,14 @@ class TeachersTableSeeder extends Seeder
     public function run()
     {
         DB::table('teachers')->delete();
-        $students = new Teacher();
-        $students->name = ['ar' => 'اليزابيث', 'en' => 'Elisabeth'];
-        $students->email = 'Ahmed_Ibrahim@yahoo.com';
-        $students->password = Hash::make('12345678');
-        $students->Specialization_id = Specialization::all()->unique()->random()->id;
-        $students->gender_id = 1;
-        $students->Joining_Date = date('2022-01-01');
-        $students->Address = 'Lermoos - Tirol';
-        $students->save();
+        $teacher = new Teacher();
+        $teacher->Name = ['ar' => 'احمد', 'en' => 'Ahmed'];
+        $teacher->email = 'Ahmed_Ibrahim@yahoo.com';
+        $teacher->password = Hash::make('12345678');
+        $teacher->Specialization_id = Specialization::all()->unique()->random()->id;
+        $teacher->gender_id = 1;
+        $teacher->Joining_Date = date('2022-01-01');
+        $teacher->Address = 'Lermoos - Tirol';
+        $teacher->save();
     }
 }

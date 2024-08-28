@@ -15,9 +15,9 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}"
-                                                   class="default-color">{{__('main_trans.Dashboard')}}</a>
+                                                   class="default-color">{{__('main_trans.dashboard')}}</a>
                     </li>
-                    <li class="breadcrumb-item active">{{__('main_trans.Grades')}}</li>
+                    <li class="breadcrumb-item active">{{__('main_trans.grades')}}</li>
                 </ol>
             </div>
         </div>

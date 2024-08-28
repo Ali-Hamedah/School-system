@@ -54,8 +54,67 @@
                                                     <a href="{{ route('viewBooks', $book->file_name) }}" title="view"
                                                         class="btn btn-success btn-sm" role="button"
                                                         aria-pressed="true"><i class="fas fa-eye"></i></a>
+
+                                                        <a href="{{ route('library.edit', $book->id) }}" title="edit"
+                                                            class="btn btn-success btn-sm" role="button"
+                                                            aria-pressed="true"><i class="fas fa-edit"></i></a>
+
+                                                        {{-- <a href="{{ route('library.edit', $book->id)  }}"
+                                                        class="btn btn-outline-info btn-sm" role="button"
+                                                       
+                                                        data-target="#">{{ trans('Sections_trans.Edit') }}</a> --}}
+                                                     <a href="#"
+                                                        class="btn btn-outline-danger btn-sm"
+                                                        data-toggle="modal"
+                                                        data-target="#delete{{ $book->id }}">{{ trans('Sections_trans.Delete') }}</a>
                                                 </td>
                                             </tr>
+
+                                             <!-- delete_modal_Grade -->
+                                             <div class="modal fade"
+                                             id="delete{{ $book->id }}"
+                                             tabindex="-1" role="dialog"
+                                             aria-labelledby="exampleModalLabel"
+                                             aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 style="font-family: 'Cairo', sans-serif;"
+                                                            class="modal-title"
+                                                            id="exampleModalLabel">
+                                                            delete Book
+                                                        </h5>
+                                                        <button type="button" class="close"
+                                                                data-dismiss="modal"
+                                                                aria-label="Close">
+                                                        <span
+                                                            aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="{{ route('library.destroy',  $book->id) }}"
+                                                            method="post">
+                                                            {{ method_field('Delete') }}
+                                                            @csrf
+                                                            {{ trans('Sections_trans.Warning_Section') }}
+                                                            <input id="id" type="hidden"
+                                                                   name="id"
+                                                                   class="form-control"
+                                                                   value="{{ $book->id }}">
+                                                            <div class="modal-footer">
+                                                                <button type="button"
+                                                                        class="btn btn-secondary"
+                                                                        data-dismiss="modal">{{ trans('Sections_trans.Close') }}</button>
+                                                                <button type="submit"
+                                                                        class="btn btn-danger">{{ trans('Sections_trans.submit') }}</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
                                         @endforeach
                                 </table>
                             </div>

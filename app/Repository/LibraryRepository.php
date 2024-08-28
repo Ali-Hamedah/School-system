@@ -74,9 +74,9 @@ class LibraryRepository implements LibraryRepositoryInterface
 
             if ($request->hasfile('file_name')) {
 
-                $this->deleteFile($book->file_name);
+                $this->deleteFile(Library::class, $request->id, 'attachments/library/');
 
-                $this->uploadFile($request, 'file_name');
+                $this->uploadFile($request, 'file_name', 'library');
 
                 $file_name_new = $request->file('file_name')->getClientOriginalName();
                 $book->file_name = $book->file_name !== $file_name_new ? $file_name_new : $book->file_name;
@@ -88,18 +88,15 @@ class LibraryRepository implements LibraryRepositoryInterface
             $book->teacher_id = 1;
             $book->save();
             toastr()->success(trans('messages.Update'));
-            return redirect()->route('library.index');
+            return redirect()->back();
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
-    public function destroy($request)
+    public function destroy($id)
     {
-        $this->deleteFile($request->file_name);
-        library::destroy($request->id);
-        toastr()->error(trans('messages.Delete'));
-        return redirect()->route('library.index');
+        return $this->deleteFile(Library::class, $id, 'attachments/library/');
     }
 
     public function download($filename)

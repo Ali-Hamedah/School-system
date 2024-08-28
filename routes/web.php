@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Questions\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,7 +86,7 @@ Route::group(
             Route::resource('Attendance', 'AttendanceController');
             Route::get('download_file/{filename}', 'LibraryController@downloadAttachment')->name('downloadAttachment');
             Route::get('/viewBooks/{file_name}', 'LibraryController@viewAttachment')->name('viewBooks');
-            Route::get('/library/{grade}/{classroom}', 'LibraryController@books')->name('library.books');
+            Route::get('/books/{grade}/{classroom}', 'LibraryController@books')->name('library.books');
             Route::resource('library', 'LibraryController');
             Route::post('Upload_attachment', 'StudentController@Upload_attachment')->name('Upload_attachment');
             Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
@@ -103,7 +104,7 @@ Route::group(
         });
 
         //==============================questions============================
-        Route::group(['namespace' => 'questions'], function () {
+        Route::group(['namespace' => 'Questions'], function () {
             Route::resource('questions', 'QuestionController');
         });
 

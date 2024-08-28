@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers\Students;
 
+use Exception;
 use App\Models\Grade;
 use App\Models\Library;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use App\Http\Traits\AttachFilesTrait;
 use App\Repository\LibraryRepositoryInterface;
 
 class LibraryController extends Controller
 {
 
-
+    use AttachFilesTrait;
     protected $library;
 
     public function __construct(LibraryRepositoryInterface $library)
@@ -50,10 +54,16 @@ class LibraryController extends Controller
     }
 
 
-    public function destroy(Request $request)
+    // public function destroy(Request $request)
+    // {
+    //     return $this->library->destroy($request);
+    // }
+
+    public function destroy($id)
     {
-        return $this->library->destroy($request);
+        return $this->library->destroy($id);
     }
+
 
     public function downloadAttachment($filename)
     {
