@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Quizzes;
 
-use App\Http\Controllers\Controller;
 use App\Models\Degree;
 use App\Models\Quizze;
-use App\Repository\QuizzRepositoryInterface;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+use App\Repository\QuizzRepositoryInterface;
+use App\Http\Requests\StoreQuizzeRequest;
 
 class QuizzeController extends Controller
 {
@@ -29,7 +31,7 @@ class QuizzeController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreQuizzeRequest $request)
     {
         return $this->Quizz->store($request);
 

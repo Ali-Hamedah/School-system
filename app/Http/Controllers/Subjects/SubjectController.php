@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Subjects;
 
-use App\Http\Controllers\Controller;
-use App\Repository\SubjectRepositoryInterface;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSubjectsRequest;
+use App\Repository\SubjectRepositoryInterface;
 
 class SubjectController extends Controller
 {
@@ -28,7 +29,7 @@ class SubjectController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreSubjectsRequest $request)
     {
         return $this->Subject->store($request);
     }

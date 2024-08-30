@@ -36,7 +36,10 @@
 
                                     <div class="col">
                                         <label for="title">{{__('dashboard.Name_Book')}}</label>
-                                        <input type="text" name="title" class="form-control">
+                                        <input type="text" name="title" class="form-control" required>
+                                        @error('title')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                 </div>
@@ -47,12 +50,15 @@
                                         <div class="form-group">
                                             <label for="Grade_id">{{trans('Students_trans.Grade')}} : <span
                                                     class="text-danger">*</span></label>
-                                            <select class="custom-select mr-sm-2" name="Grade_id">
+                                            <select class="custom-select mr-sm-2" name="Grade_id" required>
                                                 <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
                                                 @foreach($grades as $grade)
                                                     <option value="{{ $grade->id }}">{{ $grade->Name }}</option>
                                                 @endforeach
                                             </select>
+                                            @error('Grade_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -60,18 +66,25 @@
                                         <div class="form-group">
                                             <label for="Classroom_id">{{trans('Students_trans.classrooms')}} : <span
                                                     class="text-danger">*</span></label>
-                                            <select class="custom-select mr-sm-2" name="Classroom_id">
+                                            <select class="custom-select mr-sm-2" name="Classroom_id" required>
 
                                             </select>
+                                            @error('Classroom_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="section_id">{{trans('Students_trans.section')}} : </label>
-                                            <select class="custom-select mr-sm-2" name="section_id">
+                                            <select class="custom-select mr-sm-2" name="section_id" required>
 
                                             </select>
+                                            @error('section_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -85,6 +98,9 @@
                                             <label for="academic_year">{{__('dashboard.Attachments')}} : <span
                                                     class="text-danger">*</span></label>
                                             <input type="file" accept="application/pdf" name="file_name" required>
+                                            @error('file_name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>

@@ -28,6 +28,7 @@ class LibraryRepository implements LibraryRepositoryInterface
 
     public function store($request)
     {
+        $validatedData = $request->validated();
         try {
             $books = new Library();
             $books->title = $request->title;

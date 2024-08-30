@@ -36,11 +36,17 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <label for="title">اسم المادة باللغة العربية</label>
-                                        <input type="text" name="Name_ar" class="form-control">
+                                        <input type="text" name="Name_ar" class="form-control" required>
+                                        @error('name')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="col">
                                         <label for="title">اسم المادة باللغة الانجليزية</label>
-                                        <input type="text" name="Name_en" class="form-control">
+                                        <input type="text" name="Name_en" class="form-control" required>
+                                        @error('name')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <br>
@@ -48,28 +54,37 @@
                                 <div class="form-row">
                                     <div class="form-group col">
                                         <label for="inputState">المرحلة الدراسية</label>
-                                        <select class="custom-select my-1 mr-sm-2" name="Grade_id">
+                                        <select class="custom-select my-1 mr-sm-2" name="Grade_id" required>
                                             <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
                                             @foreach($grades as $grade)
                                                 <option value="{{$grade->id}}">{{$grade->Name}}</option>
                                             @endforeach
                                         </select>
+                                        @error('grade_id')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group col">
                                         <label for="inputState">الصف الدراسي</label>
-                                        <select name="Class_id" class="custom-select"></select>
+                                        <select name="Class_id" class="custom-select" required></select>
+                                        @error('classroom_id')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
 
                                     <div class="form-group col">
                                         <label for="inputState">اسم المعلم</label>
-                                        <select class="custom-select my-1 mr-sm-2" name="teacher_id">
+                                        <select class="custom-select my-1 mr-sm-2" name="teacher_id" required>
                                             <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
                                             @foreach($teachers as $teacher)
                                                 <option value="{{$teacher->id}}">{{$teacher->Name}}</option>
                                             @endforeach
                                         </select>
+                                        @error('teacher_id')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ

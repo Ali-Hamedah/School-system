@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use App\Http\Traits\AttachFilesTrait;
+use App\Http\Requests\StoreLibraryRequest;
 use App\Repository\LibraryRepositoryInterface;
 
 class LibraryController extends Controller
@@ -33,7 +34,7 @@ class LibraryController extends Controller
         return $this->library->create();
     }
 
-    public function store(Request $request)
+    public function store(StoreLibraryRequest $request)
     {
         return $this->library->store($request);
     }

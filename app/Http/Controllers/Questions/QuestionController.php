@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Questions;
 
-use App\Http\Controllers\Controller;
-use App\Repository\QuestionRepositoryInterface;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreQuestionRequest;
+use App\Repository\QuestionRepositoryInterface;
 
 class QuestionController extends Controller
 {
@@ -26,7 +27,7 @@ class QuestionController extends Controller
         return $this->Question->create();
     }
 
-    public function store(Request $request)
+    public function store(StoreQuestionRequest $request)
     {
         return $this->Question->store($request);
     }

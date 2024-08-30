@@ -30,7 +30,7 @@ Route::group(
         Route::resource('profile_student', 'ProfileController');
 
         
-        Route::get('/books/{id}', 'BooksController@books')->name('student_books');
+        Route::get('/books/{id}/', 'BooksController@books')->name('student_books');
 
         Route::get('/downloadAttachment/{filename}', 'BooksController@downloadAttachment')->name('student_downloadAttachment');
 

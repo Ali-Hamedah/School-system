@@ -20,8 +20,13 @@
         </li>
 
         <li>
-            <a href="{{route('student_books', ['id' => Auth::user()->id])}}"><i class="fas fa-book-open"></i><span
-                    class="right-nav-text">{{__('main_trans.library')}}</span></a>
+      
+
+<a href="{{ route('student_books', 'id' ) }}">
+    <i class="fas fa-book-open"></i>
+    <span class="right-nav-text">{{ __('main_trans.library') }}</span>
+</a>
+
         </li>
 
 
