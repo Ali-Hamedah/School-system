@@ -133,7 +133,7 @@ preloader -->
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
                             <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a
-                                href="{{route('sections')}}" target="_blank"><span
+                                href="{{route('Sections.index')}}" target="_blank"><span
                                     class="text-danger">{{__('dashboard.View_data')}}</span></a>
                         </p>
                     </div>

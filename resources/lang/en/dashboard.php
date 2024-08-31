@@ -84,6 +84,11 @@ return [
     'Guardian' => 'Guardian',
     'Student' => 'Student',
     'Payments' => 'Payments',
+    'App_AliSoft' => 'برنامج علي سوفت لادارة المدارس',
+    'Login_Student' => ' Login Student',
+    'Login_Guardian' => 'Login Guardian',
+    'Login_Teacher' => 'Login Teacher',
+    'Login_Admin' => 'Login Admin',
 
 
 ];

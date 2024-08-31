@@ -18,4 +18,7 @@ return [
     'Username_ar' => 'Username_ar',
     'Username_en' => 'Username_en',
     'Show_Password' => 'Show Password',
+    'Forgot_your_password' => 'Forgot your password?',
+    'Login' => 'Login',
+    'Remind_me' => 'Remind me',
 ];

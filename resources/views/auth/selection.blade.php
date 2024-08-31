@@ -34,24 +34,32 @@
 
                 <div style="border-radius: 15px;" class="col-lg-8 col-md-8 bg-white">
                     <div class="login-fancy pb-40 clearfix">
-                        <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">{{__('dashboard.Select_login')}}</h3>
+                        <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">Select your sign-in method</h3>
                         <div class="form-inline">
                             <a class="btn btn-default col-lg-3" title="{{__('dashboard.Student')}}"
-                               href="{{route('login.show','student')}}">
-                                <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/student.png')}}">
-                            </a>
-                            <a class="btn btn-default col-lg-3" title="{{__('dashboard.Guardian')}}"
-                               href="{{route('login.show','parent')}}">
-                                <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/parent.png')}}">
-                            </a>
-                            <a class="btn btn-default col-lg-3" title="{{__('dashboard.Teacher')}}"
-                               href="{{route('login.show','teacher')}}">
-                                <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/teacher.png')}}">
-                            </a>
-                            <a class="btn btn-default col-lg-3" title="{{__('dashboard.Admin')}}"
-                               href="{{route('login.show','admin')}}">
-                                <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/admin.png')}}">
-                            </a>
+                            href="{{route('login.show','student')}}">
+                             <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/student.png')}}">
+                             <div class="text-center">Student</div>
+                         </a>
+                         
+                         <a class="btn btn-default col-lg-3" title="{{__('dashboard.Guardian')}}"
+                            href="{{route('login.show','parent')}}">
+                             <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/parent.png')}}">
+                             <div class="text-center">Guardian</div>
+                         </a>
+                         
+                         <a class="btn btn-default col-lg-3" title="{{__('dashboard.Teacher')}}"
+                            href="{{route('login.show','teacher')}}">
+                             <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/teacher.png')}}">
+                             <div class="text-center">Teacher</div>
+                         </a>
+                         
+                         <a class="btn btn-default col-lg-3" title="{{__('dashboard.Admin')}}"
+                            href="{{route('login.show','admin')}}">
+                             <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/admin.png')}}">
+                             <div class="text-center">Admin</div>
+                         </a>
+                         
                         </div>
 
                     </div>

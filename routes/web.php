@@ -16,9 +16,10 @@ use App\Http\Controllers\Questions\QuestionController;
 
 //Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('selection');
-
-
+Route::prefix(LaravelLocalization::setLocale())->group(function () {
+ 
+    Route::get('/', 'HomeController@index')->name('selection');
+    
 Route::group(['namespace' => 'Auth'], function () {
 
     Route::get('/login/{type}', 'LoginController@loginForm')->middleware('guest')->name('login.show');
@@ -27,6 +28,11 @@ Route::group(['namespace' => 'Auth'], function () {
 
     Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
 });
+});
+
+
+
+
 //==============================Translate all pages============================
 Route::group(
     [

@@ -85,6 +85,12 @@ return [
     'Guardian' => 'ولي امر',
     'Student' => 'طالب',
     'Payments' => 'المدفوعات',
+    'App_AliSoft' => 'برنامج علي سوفت لادارة المدارس',
+    'Login_Student' => 'تسجيل دخول طالب',
+    'Login_Guardian' => 'تسجيل دخول ولي امر',
+    'Login_Teacher' => 'تسجيل دخول معلم',
+    'Login_Admin' => 'تسجيل دخول ادمن',
+
 
 
 ];
