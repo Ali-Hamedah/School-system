@@ -33,6 +33,7 @@ return [
     'List_Parents' => 'List Parents',
     'Accounts' => 'Accounts',
     'Tuition_fees' => 'Tuition fees',
+    'Bus_fees' => 'Bus fees',
     'Invoices' => 'Invoices',
     'Arrest_warrants' => 'Arrest warrants',
     'Exclusion_of_fees' => 'Exclusion of fees',

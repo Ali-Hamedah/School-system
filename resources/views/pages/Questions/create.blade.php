@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-    اضافة سؤال جديد
+{{__('dashboard.Add_new_question')}}
 @stop
 @endsection
 @section('page-header')
 <!-- breadcrumb -->
 @section('PageTitle')
-    اضافة سؤال جديد
+{{__('dashboard.Add_new_question')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -35,7 +35,7 @@
                             <div class="form-row">
 
                                 <div class="col">
-                                    <label for="title">اسم السؤال</label>
+                                    <label for="title">{{__('dashboard.Question')}} </label>
                                     <input type="text" name="title" id="input-name"
                                         class="form-control form-control-alternative" autofocus required>
                                     @error('title')
@@ -47,7 +47,7 @@
 
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="title">الاجابات</label>
+                                    <label for="title">{{__('dashboard.Answers')}}</label>
                                     <textarea name="answers" class="form-control" id="exampleFormControlTextarea1" rows="4" required></textarea>
 
                                 </div>
@@ -59,7 +59,7 @@
 
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="title">الاجابة الصحيحة</label>
+                                    <label for="title">{{__('dashboard.Right_answer')}} </label>
                                     <input type="text" name="right_answer" id="input-name"
                                         class="form-control form-control-alternative" autofocus required>
                                 </div>
@@ -72,9 +72,9 @@
                             <div class="form-row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="Grade_id">اسم الاختبار : <span class="text-danger">*</span></label>
+                                        <label for="Grade_id">{{__('dashboard.Quiz_Name')}}: <span class="text-danger">*</span></label>
                                         <select class="custom-select mr-sm-2" name="quizze_id" required>
-                                            <option selected disabled>حدد اسم الاختبار...</option>
+                                            <option selected disabled>  {{__('dashboard.choose')}}...</option>
                                             @foreach ($quizzes as $quizze)
                                                 <option value="{{ $quizze->id }}">{{ $quizze->name }}</option>
                                             @endforeach
@@ -86,9 +86,9 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="Grade_id">الدرجة : <span class="text-danger">*</span></label>
+                                        <label for="Grade_id">{{__('dashboard.Score')}} : <span class="text-danger">*</span></label>
                                         <select class="custom-select mr-sm-2" name="score" required>
-                                            <option selected disabled> حدد الدرجة...</option>
+                                            <option selected disabled>{{__('dashboard.choose')}}...</option>
                                             <option value="5">5</option>
                                             <option value="10">10</option>
                                             <option value="15">15</option>
@@ -101,8 +101,8 @@
                                 </div>
                             </div>
                             <br>
-                            <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ
-                                البيانات
+                            <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">
+                                {{__('grades_trans.submit')}}
                             </button>
                         </form>
                     </div>

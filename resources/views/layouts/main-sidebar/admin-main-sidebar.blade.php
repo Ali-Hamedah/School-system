@@ -15,20 +15,20 @@
         <!-- Grades-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Grades-menu">
-                <div class="pull-left"><i class="fa fa-building-o"></i><span
+                <div class="pull-left"><i class="fa fa-building-o" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{trans('main_trans.Grades')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
             </a>
-            <ul id="Grades-menu" class="collapse" data-parent="#sidebarnav">
-                <li><a href="{{route('Grades.index')}}">{{trans('main_trans.Grades_list')}}</a></li>
+            <ul  id="Grades-menu" class="collapse" data-parent="#sidebarnav">
+                <li ><a href="{{route('Grades.index')}}">{{trans('main_trans.Grades_list')}}</a></li>
 
             </ul>
         </li>
         <!-- classes-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#classes-menu">
-                <div class="pull-left"><i class="fa fa-building"></i><span
+                <div class="pull-left"><i class="fa fa-chalkboard" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{trans('main_trans.classes')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -42,7 +42,7 @@
         <!-- sections-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#sections-menu">
-                <div class="pull-left"><img src="{{ URL::asset('assets/images/main/laptop.svg') }}" alt=""><span
+                <div class="pull-left"><i class="fa fa-list" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{trans('main_trans.sections')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -56,7 +56,7 @@
         <!-- students-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#students-menu"><i
-                    class="fas fa-user-"></i>{{trans('main_trans.students')}}
+                    class="fas fa-user-graduate" style="color: rgb(6, 118, 34)"></i>{{trans('main_trans.students')}}
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
             </a>
@@ -103,7 +103,7 @@
         <!-- Teachers-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Teachers-menu">
-                <div class="pull-left"><i class="fas fa-chalkboard-teacher"></i></i><span
+                <div class="pull-left"><i class="fas fa-chalkboard-teacher" style="color: rgb(6, 118, 34)"></i></i><span
                         class="right-nav-text">{{trans('main_trans.Teachers')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -117,7 +117,7 @@
         <!-- Parents-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Parents-menu">
-                <div class="pull-left"><i class="fas fa-user-tie"></i><span
+                <div class="pull-left"><i class="fas fa-user-tie" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{trans('main_trans.Parents')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -130,7 +130,7 @@
         <!-- Accounts-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu">
-                <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span
+                <div class="pull-left"><i class="fas fa-money-bill-wave-alt" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{trans('main_trans.Accounts')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -147,7 +147,7 @@
         <!-- Attendance-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Attendance-icon">
-                <div class="pull-left"><i class="fas fa-calendar-alt"></i><span
+                <div class="pull-left"><i class="fas fa-calendar-alt" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{trans('main_trans.Attendance')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -160,7 +160,7 @@
         <!-- Subjects-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Subjects">
-                <div class="pull-left"><i class="fas fa-book-open"></i><span
+                <div class="pull-left"><i class="fas fa-book-open" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{__('main_trans.Subjects')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -173,7 +173,7 @@
         <!-- Quizzes-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Exams-icon">
-                <div class="pull-left"><i class="fas fa-book-open"></i><span
+                <div class="pull-left"><i class="fas fa-book-open" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{__('main_trans.Quizzes')}}</span>
                 </div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
@@ -189,7 +189,7 @@
         <!-- library-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#library-icon">
-                <div class="pull-left"><i class="fas fa-book"></i><span
+                <div class="pull-left"><i class="fas fa-book" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{trans('main_trans.library')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -203,7 +203,7 @@
         <!-- Online classes-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Onlineclasses-icon">
-                <div class="pull-left"><i class="fas fa-video"></i><span
+                <div class="pull-left"><i class="fas fa-video" style="color: rgb(6, 118, 34)"></i><span
                         class="right-nav-text">{{trans('main_trans.Onlineclasses')}}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
@@ -216,7 +216,7 @@
 
         <!-- Settings-->
         <li>
-            <a href="{{route('settings.index')}}"><i class="fas fa-cogs"></i><span
+            <a href="{{route('settings.index')}}"><i class="fas fa-cogs" style="color: rgb(6, 118, 34)"></i><span
                     class="right-nav-text">{{trans('main_trans.Settings')}} </span></a>
         </li>
     </ul>

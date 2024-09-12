@@ -35,6 +35,9 @@
                 <div style="border-radius: 15px;" class="col-lg-8 col-md-8 bg-white">
                     <div class="login-fancy pb-40 clearfix">
                         <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">Select your sign-in method</h3>
+                      
+                        <h5 style="font-family" class="mb-6">Eamil: ali.hamedah77@yahoo.com</h5>
+                        <h5 style="font-family" class="mb-5">Password: 123456</h5>
                         <div class="form-inline">
                             <a class="btn btn-default col-lg-3" title="{{__('dashboard.Student')}}"
                             href="{{route('login.show','student')}}">

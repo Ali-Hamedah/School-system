@@ -3,7 +3,7 @@
 <title>@yield("title")</title>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon"/>
+<link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.png') }}" type="image/x-icon"/>
 
 <!-- Font -->
 <link rel="stylesheet"
@@ -17,8 +17,8 @@
 <link href="{{ URL::asset('assets/css/style.css') }}" rel="stylesheet">
 
 <!--- Style css -->
-@if (App::getLocale() == 'en')
-    <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
+@if (App::getLocale() == 'ar')
+<link href="{{ URL::asset('assets/css/rtl.css') }}" rel="stylesheet">
 @else
-    <link href="{{ URL::asset('assets/css/rtl.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
 @endif

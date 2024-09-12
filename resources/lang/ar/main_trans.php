@@ -32,6 +32,7 @@ return [
     'Add_Parent' => 'اضافة ولي امر',
     'Accounts' => 'الحسابات',
     'Tuition_fees' => 'الرسوم الدراسية',
+    'Bus_fees' => 'رسوم الباص',
     'Invoices' => 'الفواتير',
     'Arrest_warrants' => 'سندات القبض',
     'Exclusion_of_fees' => 'استبعاد رسوم',

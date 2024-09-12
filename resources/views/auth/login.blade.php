@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}">
 
+
 <head>
+    @if (App::getLocale() == 'ar')
+    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="HTML5 Template"/>
@@ -48,6 +52,12 @@
             text-decoration: none;
         }
     </style>
+    @else
+    
+    <!-- CSS -->
+    <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
+
+    @endif
 </head>
 
 <body>
@@ -55,16 +65,35 @@
 <div class="wrapper">
 
      <!-- Language Switcher -->
-     <div class="language-switcher text-right">
-        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-            <a hreflang="{{ $localeCode }}" 
-               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" 
-               class="btn btn-secondary">
-               {{ $properties['native'] }}
-            </a>
-        @endforeach
+     <div class="btn-group mb-1">
+        <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            @if (App::getLocale() == 'ar')
+                {{ LaravelLocalization::getCurrentLocaleName() }}
+                <img src="{{ URL::asset('assets/images/flags/YE.png') }}" alt="">
+            @elseif (App::getLocale() == 'en')
+                {{ LaravelLocalization::getCurrentLocaleName() }}
+                <img src="{{ URL::asset('assets/images/flags/US.png') }}" alt="">
+                @else 
+                {{ LaravelLocalization::getCurrentLocaleName() }}
+                <img src="{{ URL::asset('assets/images/flags/AT.png') }}" alt="">
+            @endif
+        </button>
+        <div class="dropdown-menu">
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            <a href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+            class="dropdown-item d-flex">
+            <span class="avatar ml-3 align-self-center bg-transparent">
+                <img src="{{ URL::asset('assets/images/flags/' . ($localeCode == 'en' ? 'US.png' : ($localeCode == 'ar' ? 'YE.png' : 'AT.png'))) }}"
+                    alt="img">
+            </span>
+            <div class="d-flex">
+                <span class="mt-2">{{ $properties['native'] }}</span>
+            </div>
+        </a>
+            @endforeach
+        </div>
     </div>
-
     <!-- Pre-loader -->
     <div id="pre-loader">
         <img src="{{ URL::asset('assets/images/pre-loader/loader-01.svg') }}" alt="Pre-loader">

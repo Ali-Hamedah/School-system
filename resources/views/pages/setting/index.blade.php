@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        الاعدادات
+        {{ trans('settings.title') }}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        الاعدادات
+        {{ trans('settings.page_title') }}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -23,7 +23,6 @@
         </div>
     @endif
 
-
     <!-- row -->
     <div class="row">
         <div class="col-md-12 mb-30">
@@ -32,20 +31,19 @@
                     <form enctype="multipart/form-data" method="post" action="{{route('settings.update','test')}}">
                         @csrf @method('PUT')
                         <div class="row">
-                            <div class="col-md-6 border-right-2 border-right-blue-400">
+                            <div class="col-md-9 border-right-2 border-right-blue-400">
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">اسم المدرسة<span
-                                            class="text-danger">*</span></label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.school_name_label') }}<span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
                                         <input name="school_name" value="{{ $setting['school_name'] }}" required
-                                               type="text" class="form-control" placeholder="Name of School">
+                                               type="text" class="form-control" placeholder="{{ trans('settings.school_name_placeholder') }}">
                                     </div>
                                 </div>
+                                
                                 <div class="form-group row">
-                                    <label for="current_session" class="col-lg-2 col-form-label font-weight-semibold">العام
-                                        الحالي<span class="text-danger">*</span></label>
+                                    <label for="current_session" class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.current_session_label') }}<span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
-                                        <select data-placeholder="Choose..." required name="current_session"
+                                        <select data-placeholder="{{ trans('settings.choose') }}..." required name="current_session"
                                                 id="current_session" class="select-search form-control">
                                             <option value=""></option>
                                             @for($y=date('Y', strtotime('- 3 years')); $y<=date('Y', strtotime('+ 1 years')); $y++)
@@ -55,55 +53,50 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">اسم المدرسة
-                                        المختصر</label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.school_title_label') }}</label>
                                     <div class="col-lg-9">
                                         <input name="school_title" value="{{ $setting['school_title'] }}" type="text"
-                                               class="form-control" placeholder="School Acronym">
+                                               class="form-control" placeholder="{{ trans('settings.school_title_placeholder') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">الهاتف</label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.phone_label') }}</label>
                                     <div class="col-lg-9">
                                         <input name="phone" value="{{ $setting['phone'] }}" type="text"
-                                               class="form-control" placeholder="Phone">
+                                               class="form-control" placeholder="{{ trans('settings.phone_placeholder') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">البريد
-                                        الالكتروني</label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.email_label') }}</label>
                                     <div class="col-lg-9">
                                         <input name="school_email" value="{{ $setting['school_email'] }}" type="email"
-                                               class="form-control" placeholder="School Email">
+                                               class="form-control" placeholder="{{ trans('settings.email_placeholder') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">عنوان المدرسة<span
-                                            class="text-danger">*</span></label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.address_label') }}<span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
                                         <input required name="address" value="{{ $setting['address'] }}" type="text"
-                                               class="form-control" placeholder="School Address">
+                                               class="form-control" placeholder="{{ trans('settings.address_placeholder') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">نهاية الترم
-                                        الاول </label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.end_first_term_label') }}</label>
                                     <div class="col-lg-9">
                                         <input name="end_first_term" value="{{ $setting['end_first_term'] }}"
-                                               type="text" class="form-control date-pick" placeholder="Date Term Ends">
+                                               type="text" class="form-control date-pick" placeholder="{{ trans('settings.end_term_placeholder') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">نهاية الترم
-                                        الثاني</label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.end_second_term_label') }}</label>
                                     <div class="col-lg-9">
                                         <input name="end_second_term" value="{{ $setting['end_second_term'] }}"
-                                               type="text" class="form-control date-pick" placeholder="Date Term Ends">
+                                               type="text" class="form-control date-pick" placeholder="{{ trans('settings.end_term_placeholder') }}">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">شعار المدرسة</label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">{{ trans('settings.logo_label') }}</label>
                                     <div class="col-lg-9">
                                         <div class="mb-3">
                                             <img style="width: 100px" height="100px"
@@ -117,7 +110,7 @@
                         </div>
                         <hr>
                         <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
-                                type="submit">{{trans('Students_trans.submit')}}</button>
+                                type="submit">{{ trans('settings.submit_button') }}</button>
                     </form>
                 </div>
             </div>

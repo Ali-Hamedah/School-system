@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
     @section('title')
-        اضافة مادة دراسية
+    {{__('dashboard.Add_new_Course')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        اضافة مادة دراسية
+    {{__('dashboard.Add_new_Course')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -35,14 +35,14 @@
 
                                 <div class="form-row">
                                     <div class="col">
-                                        <label for="title">اسم المادة باللغة العربية</label>
+                                        <label for="title">    {{__('dashboard.Course_Name_ar')}}</label>
                                         <input type="text" name="Name_ar" class="form-control" required>
                                         @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col">
-                                        <label for="title">اسم المادة باللغة الانجليزية</label>
+                                        <label for="title">   {{__('dashboard.Course_Name_en')}}</label>
                                         <input type="text" name="Name_en" class="form-control" required>
                                         @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -53,7 +53,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label for="inputState">المرحلة الدراسية</label>
+                                        <label for="inputState"> {{__('dashboard.Grade')}}</label>
                                         <select class="custom-select my-1 mr-sm-2" name="Grade_id" required>
                                             <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
                                             @foreach($grades as $grade)
@@ -66,7 +66,7 @@
                                     </div>
 
                                     <div class="form-group col">
-                                        <label for="inputState">الصف الدراسي</label>
+                                        <label for="inputState">{{__('dashboard.Class')}} </label>
                                         <select name="Class_id" class="custom-select" required></select>
                                         @error('classroom_id')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -75,7 +75,7 @@
 
 
                                     <div class="form-group col">
-                                        <label for="inputState">اسم المعلم</label>
+                                        <label for="inputState">{{__('dashboard.Teacher')}} </label>
                                         <select class="custom-select my-1 mr-sm-2" name="teacher_id" required>
                                             <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
                                             @foreach($teachers as $teacher)
@@ -87,8 +87,8 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ
-                                    البيانات
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">
+                                    {{__('grades_trans.submit')}}
                                 </button>
                             </form>
                         </div>

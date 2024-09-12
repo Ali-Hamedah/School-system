@@ -37,17 +37,26 @@ header start-->
                 @if (App::getLocale() == 'ar')
                     {{ LaravelLocalization::getCurrentLocaleName() }}
                     <img src="{{ URL::asset('assets/images/flags/YE.png') }}" alt="">
-                @else
+                @elseif (App::getLocale() == 'en')
                     {{ LaravelLocalization::getCurrentLocaleName() }}
                     <img src="{{ URL::asset('assets/images/flags/US.png') }}" alt="">
+                    @else 
+                    {{ LaravelLocalization::getCurrentLocaleName() }}
+                    <img src="{{ URL::asset('assets/images/flags/AT.png') }}" alt="">
                 @endif
             </button>
             <div class="dropdown-menu">
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}"
-                       href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                        {{ $properties['native'] }}
-                    </a>
+                <a href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                class="dropdown-item d-flex">
+                <span class="avatar ml-3 align-self-center bg-transparent">
+                    <img src="{{ URL::asset('assets/images/flags/' . ($localeCode == 'en' ? 'US.png' : ($localeCode == 'ar' ? 'YE.png' : 'AT.png'))) }}"
+                        alt="img">
+                </span>
+                <div class="d-flex">
+                    <span class="mt-2">{{ $properties['native'] }}</span>
+                </div>
+            </a>
                 @endforeach
             </div>
         </div>
