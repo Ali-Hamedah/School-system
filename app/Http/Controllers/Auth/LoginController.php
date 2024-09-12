@@ -43,7 +43,7 @@ class LoginController extends Controller
             return $this->redirect($request);
         }
         else {
-            return redirect()->back()->with(['Add' => 'يرجى التاكد من الايميل وكلمة السر']);
+            return redirect()->back()->with(['Add' => trans('messages.Falsch_data')]);
 
         }
 
